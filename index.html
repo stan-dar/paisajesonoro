@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paisaje Sonoro — Archivo de Escuchas</title>
+<meta name="description" content="Un archivo de paisajes sonoros documentados. / An archive of documented soundscapes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --tierra: #3d2b1f;
+  --tierra-medio: #6b4c38;
+  --arena: #c4a882;
+  --arena-claro: #e8d9c4;
+  --papel: #f5ede0;
+  --musgo: #5a6b4a;
+  --musgo-claro: #8a9e78;
+  --piedra: #8c7b6e;
+  --niebla: #d4c9bb;
+  --blanco: #faf6f0;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--blanco);color:var(--tierra);font-family:'Jost',sans-serif;font-weight:300;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5}
+
+/* LANG */
+.lang-toggle{position:fixed;top:1.8rem;right:2.5rem;z-index:200;display:flex;gap:.5rem;align-items:center}
+.lang-btn{background:none;border:none;font-family:'Jost',sans-serif;font-weight:300;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--piedra);cursor:pointer;padding:.2rem .4rem;transition:color .3s}
+.lang-btn.active{color:var(--tierra);font-weight:400}
+.lang-divider{width:1px;height:10px;background:var(--niebla)}
+.en{display:none}
+
+/* HERO */
+.hero{min-height:100vh;display:grid;grid-template-rows:1fr auto;padding:4rem 2.5rem 3rem;position:relative;background:linear-gradient(155deg,var(--blanco) 0%,var(--arena-claro) 55%,var(--papel) 100%)}
+.hero-content{display:flex;flex-direction:column;justify-content:center;max-width:850px;padding-top:5rem}
+.proyecto-label{font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--musgo);margin-bottom:2.5rem;opacity:0;animation:fadeUp 1s ease .3s forwards}
+.titulo-principal{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(3.5rem,9vw,7rem);line-height:.93;color:var(--tierra);margin-bottom:.25em;opacity:0;animation:fadeUp 1.2s ease .5s forwards}
+.titulo-secundario{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:clamp(1.1rem,2.5vw,1.8rem);color:var(--tierra-medio);margin-bottom:3rem;opacity:0;animation:fadeUp 1.2s ease .7s forwards}
+.descripcion{max-width:500px;font-size:.92rem;line-height:1.9;color:var(--tierra-medio);opacity:0;animation:fadeUp 1.2s ease .9s forwards}
+.wave-deco{position:absolute;right:0;top:50%;transform:translateY(-50%);width:42%;max-width:480px;opacity:0;animation:fadeIn 2s ease 1.2s forwards;pointer-events:none}
+.scroll-hint{display:flex;align-items:center;gap:1rem;opacity:0;animation:fadeIn 1s ease 1.8s forwards}
+.scroll-line{width:40px;height:1px;background:var(--arena);position:relative;overflow:hidden}
+.scroll-line::after{content:'';position:absolute;left:-100%;top:0;width:100%;height:100%;background:var(--musgo);animation:slideLine 2.5s ease 2s infinite}
+.scroll-text{font-size:.58rem;letter-spacing:.25em;text-transform:uppercase;color:var(--piedra)}
+
+/* CONCEPTO */
+.s-concepto{padding:7rem 2.5rem;background:var(--tierra);position:relative;overflow:hidden}
+.s-concepto::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--arena),transparent)}
+.concepto-inner{max-width:980px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.c-num{font-family:'Cormorant Garamond',serif;font-size:7rem;line-height:1;color:var(--tierra-medio);opacity:.35;margin-bottom:-1.5rem}
+.c-titulo{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:2.6rem;color:var(--arena-claro);line-height:1.15;margin-bottom:1.5rem}
+.c-texto{font-size:.88rem;line-height:1.95;color:var(--niebla)}
+.c-cita{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.45rem;color:var(--arena);line-height:1.55;padding-left:1.5rem;border-left:2px solid var(--musgo-claro);margin-top:2.5rem}
+.c-cita small{display:block;font-size:.62rem;font-family:'Jost',sans-serif;font-style:normal;letter-spacing:.15em;text-transform:uppercase;color:var(--musgo-claro);margin-top:.7rem}
+
+/* MÉTODO */
+.s-metodo{padding:7rem 2.5rem;background:var(--papel)}
+.m-header{max-width:980px;margin:0 auto 4.5rem}
+.s-etiqueta{font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:var(--musgo);margin-bottom:.8rem}
+.s-titulo{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(1.8rem,3.5vw,3rem);color:var(--tierra);line-height:1.2}
+.m-grid{max-width:980px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem}
+.m-item{padding-top:1.8rem;border-top:2px solid var(--musgo-claro)}
+.m-icono{font-family:'Cormorant Garamond',serif;font-size:2.2rem;color:var(--arena);margin-bottom:.8rem;display:block}
+.m-nombre{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--musgo);margin-bottom:.7rem}
+.m-desc{font-size:.86rem;line-height:1.85;color:var(--tierra-medio)}
+
+/* PRÓXIMO */
+.s-pronto{padding:7rem 2.5rem;background:linear-gradient(180deg,var(--arena-claro) 0%,var(--blanco) 100%);text-align:center}
+.pronto-inner{max-width:580px;margin:0 auto}
+.p-simbolo{font-size:2.5rem;margin-bottom:1.8rem;display:block;animation:pulso 3s ease infinite}
+.p-titulo{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:2.3rem;color:var(--tierra);margin-bottom:1.3rem;line-height:1.2}
+.p-texto{font-size:.9rem;line-height:1.9;color:var(--tierra-medio);margin-bottom:2.5rem}
+.coords{display:inline-flex;gap:2rem;padding:.9rem 2rem;border:1px solid var(--niebla);background:rgba(255,255,255,.6)}
+.coord-item{text-align:center}
+.coord-label{font-size:.52rem;letter-spacing:.2em;text-transform:uppercase;color:var(--piedra);display:block;margin-bottom:.25rem}
+.coord-valor{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--tierra)}
+
+/* FOOTER */
+footer{padding:2.5rem 2.5rem;background:var(--tierra);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.f-marca{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--arena);letter-spacing:.05em}
+.f-info{font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--piedra);text-align:right}
+.f-info a{color:var(--musgo-claro);text-decoration:none;transition:color .3s}
+.f-info a:hover{color:var(--arena)}
+
+/* ANIMS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes slideLine{0%{left:-100%}100%{left:100%}}
+@keyframes pulso{0%,100%{opacity:.6;transform:scale(1)}50%{opacity:1;transform:scale(1.04)}}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .wave-deco{display:none}
+  .concepto-inner{grid-template-columns:1fr;gap:3rem}
+  .m-grid{grid-template-columns:1fr;gap:2rem}
+  footer{flex-direction:column;text-align:center}
+  .f-info{text-align:center}
+  .coords{flex-direction:column;gap:.8rem}
+}
+</style>
+</head>
+<body>
+
+<div class="lang-toggle">
+  <button class="lang-btn active" id="btn-es" onclick="setLang('es')">ES</button>
+  <div class="lang-divider"></div>
+  <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <p class="proyecto-label">
+      <span class="es">Archivo de Escuchas · España</span>
+      <span class="en">Listening Archive · Spain</span>
+    </p>
+    <h1 class="titulo-principal">Paisaje<br>Sonoro</h1>
+    <p class="titulo-secundario">
+      <span class="es">Escuchar el mundo con atención</span>
+      <span class="en">Listening to the world with attention</span>
+    </p>
+    <p class="descripcion">
+      <span class="es">Un archivo de momentos sonoros documentados. Cada grabación es testigo de un lugar en un instante preciso — sus coordenadas, su clima, su silencio y su ruido. Una cápsula del tiempo para el oído.</span>
+      <span class="en">An archive of documented sonic moments. Each recording witnesses a place at a precise instant — its coordinates, its weather, its silence and its sound. A time capsule for the ear.</span>
+    </p>
+  </div>
+
+  <div class="wave-deco">
+    <svg viewBox="0 0 480 280" xmlns="http://www.w3.org/2000/svg" fill="none">
+      <g opacity=".12">
+        <path d="M0 140 Q30 70 60 140 Q90 210 120 140 Q150 70 180 140 Q210 210 240 140 Q270 70 300 140 Q330 210 360 140 Q390 70 420 140 Q450 210 480 140" stroke="#6b4c38" stroke-width="1.5"/>
+        <path d="M0 140 Q30 100 60 140 Q90 180 120 140 Q150 100 180 140 Q210 180 240 140 Q270 100 300 140 Q330 180 360 140 Q390 100 420 140 Q450 180 480 140" stroke="#5a6b4a" stroke-width="1"/>
+      </g>
+      <g opacity=".07" fill="#3d2b1f">
+        <rect x="8"  y="105" width="3" height="70"  rx="1"/>
+        <rect x="18" y="85"  width="3" height="110" rx="1"/>
+        <rect x="28" y="120" width="3" height="40"  rx="1"/>
+        <rect x="38" y="65"  width="3" height="150" rx="1"/>
+        <rect x="48" y="100" width="3" height="80"  rx="1"/>
+        <rect x="58" y="125" width="3" height="30"  rx="1"/>
+        <rect x="68" y="80"  width="3" height="120" rx="1"/>
+        <rect x="78" y="110" width="3" height="60"  rx="1"/>
+        <rect x="88" y="90"  width="3" height="100" rx="1"/>
+        <rect x="98" y="135" width="3" height="10"  rx="1"/>
+        <rect x="108" y="70" width="3" height="140" rx="1"/>
+        <rect x="118" y="115" width="3" height="50" rx="1"/>
+        <rect x="128" y="95" width="3" height="90"  rx="1"/>
+        <rect x="138" y="55" width="3" height="170" rx="1"/>
+        <rect x="148" y="125" width="3" height="30" rx="1"/>
+        <rect x="158" y="105" width="3" height="70" rx="1"/>
+        <rect x="168" y="85" width="3" height="110" rx="1"/>
+        <rect x="178" y="140" width="3" height="0"  rx="1"/>
+        <rect x="188" y="75" width="3" height="130" rx="1"/>
+        <rect x="198" y="110" width="3" height="60" rx="1"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
+    <span class="scroll-text">
+      <span class="es">Descubrir</span>
+      <span class="en">Discover</span>
+    </span>
+  </div>
+</section>
+
+<!-- CONCEPTO -->
+<section class="s-concepto">
+  <div class="concepto-inner">
+    <div>
+      <div class="c-num">01</div>
+      <h2 class="c-titulo es">El paisaje que<br>no se ve,<br>se escucha</h2>
+      <h2 class="c-titulo en">The landscape<br>unseen,<br>only heard</h2>
+      <p class="c-texto es">El concepto de paisaje sonoro nació en Canadá en los años 70 de la mano de R. Murray Schafer. Su idea era sencilla y radical: el entorno acústico de un lugar es tan real y tan rico como su entorno visual. Merece ser escuchado, documentado y preservado.</p>
+      <p class="c-texto en">The concept of soundscape was born in Canada in the 1970s through R. Murray Schafer. His idea was simple and radical: the acoustic environment of a place is as real and as rich as its visual environment. It deserves to be heard, documented and preserved.</p>
+    </div>
+    <div>
+      <div class="c-cita es">«Un paisaje sonoro consiste en eventos escuchados, no en objetos vistos»<small>R. Murray Schafer</small></div>
+      <div class="c-cita en">"A soundscape consists of events heard, not objects seen"<small>R. Murray Schafer</small></div>
+      <br><br>
+      <p class="c-texto es">Este archivo recoge paisajes sonoros documentados con rigor: coordenadas GPS, altitud, fecha y hora exactas, condiciones meteorológicas, equipo utilizado. Cada grabación es un documento irrepetible de un momento que ya no existe.</p>
+      <p class="c-texto en">This archive collects soundscapes documented with rigour: GPS coordinates, altitude, exact date and time, weather conditions, equipment used. Each recording is an unrepeatable document of a moment that no longer exists.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MÉTODO -->
+<section class="s-metodo">
+  <div class="m-header">
+    <p class="s-etiqueta es">Cómo trabajamos</p>
+    <p class="s-etiqueta en">How we work</p>
+    <h2 class="s-titulo es">Cada grabación es<br>un documento completo</h2>
+    <h2 class="s-titulo en">Each recording is<br>a complete document</h2>
+  </div>
+  <div class="m-grid">
+    <div class="m-item">
+      <span class="m-icono">◈</span>
+      <p class="m-nombre es">Referencia, Fecha y Hora</p>
+      <p class="m-nombre en">Reference, Date and Time</p>
+      <p class="m-desc es">Cada grabación recibe una referencia única, marcada con su fecha exacta, hora de inicio y duración. Un identificador irrepetible en el tiempo.</p>
+      <p class="m-desc en">Each recording receives a unique reference, marked with its exact date, start time and duration. An unrepeatable identifier in time.</p>
+    </div>
+    <div class="m-item">
+      <span class="m-icono">◎</span>
+      <p class="m-nombre es">Lugar en el Mapa</p>
+      <p class="m-nombre en">Place on the Map</p>
+      <p class="m-desc es">Coordenadas GPS precisas, altitud y orientación del micrófono. Cada paisaje sonoro queda fijado geográficamente para poder ser relocalizado en el futuro.</p>
+      <p class="m-desc en">Precise GPS coordinates, altitude and microphone orientation. Each soundscape is geographically fixed so it can be relocated in the future.</p>
+    </div>
+    <div class="m-item">
+      <span class="m-icono">◷</span>
+      <p class="m-nombre es">Condiciones del Momento</p>
+      <p class="m-nombre en">Conditions of the Moment</p>
+      <p class="m-desc es">Tipo de entorno, condiciones de viento, temperatura. Las circunstancias atmosféricas que moldean el paisaje sonoro en ese instante preciso.</p>
+      <p class="m-desc en">Environment type, wind conditions, temperature. The atmospheric circumstances that shape the soundscape at that precise instant.</p>
+    </div>
+    <div class="m-item">
+      <span class="m-icono">◈</span>
+      <p class="m-nombre es">Audio y Documentación</p>
+      <p class="m-nombre en">Audio and Documentation</p>
+      <p class="m-desc es">Grabación en WAV de alta fidelidad con metadatos técnicos completos: equipo utilizado, configuración de micrófonos, frecuencia de muestreo. Acompañada de fotografía del lugar en el momento exacto.</p>
+      <p class="m-desc en">High-fidelity WAV recording with complete technical metadata: equipment used, microphone configuration, sampling rate. Accompanied by a photograph of the place at that exact moment.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRÓXIMO -->
+<section class="s-pronto">
+  <div class="pronto-inner">
+    <span class="p-simbolo">◎</span>
+    <h2 class="p-titulo es">Las primeras escuchas<br>están en camino</h2>
+    <h2 class="p-titulo en">The first recordings<br>are on their way</h2>
+    <p class="p-texto es">El archivo está preparado. Los micrófonos, calibrados. Pronto comenzarán a aparecer aquí los primeros paisajes sonoros — cada uno con su lugar en el mapa, su momento en el tiempo y su escucha.</p>
+    <p class="p-texto en">The archive is ready. The microphones, calibrated. Soon the first soundscapes will appear here — each one with its place on the map, its moment in time and its listening.</p>
+    <div class="coords">
+      <div class="coord-item">
+        <span class="coord-label es">Estado</span>
+        <span class="coord-label en">Status</span>
+        <span class="coord-valor es">En preparación</span>
+        <span class="coord-valor en">In preparation</span>
+      </div>
+      <div class="coord-item">
+        <span class="coord-label">Archivo</span>
+        <span class="coord-valor">0 / ∞</span>
+      </div>
+      <div class="coord-item">
+        <span class="coord-label es">Inicio</span>
+        <span class="coord-label en">Start</span>
+        <span class="coord-valor">2025</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="f-marca">Paisaje Sonoro</div>
+    <div style="font-size:.55rem;letter-spacing:.1em;margin-top:.5rem;color:var(--tierra-medio);">
+      <span class="es">Contacto: </span>
+      <span class="en">Contact: </span>
+      <a href="mailto:stan.dar2323@gmail.com" style="color:var(--arena);text-decoration:none;transition:color .3s">stan.dar2323@gmail.com</a>
+    </div>
+  </div>
+  <div class="f-info">
+    <span class="es">Archivo permanente · </span>
+    <span class="en">Permanent archive · </span>
+    <a href="https://archive.org" target="_blank">Internet Archive</a> · 
+    <a href="https://stan-dar.github.io/paisajesonoro" target="_blank">GitHub Pages</a>
+    <br>
+    <span style="color:var(--tierra-medio);margin-top:.3rem;display:block">
+      <span class="es">España · Creative Commons BY-NC-SA 4.0</span>
+      <span class="en">Spain · Creative Commons BY-NC-SA 4.0</span>
+    </span>
+  </div>
+</footer>
+
+<script>
+function setLang(l) {
+  const isEn = l === 'en';
+  document.getElementById('btn-en').classList.toggle('active', isEn);
+  document.getElementById('btn-es').classList.toggle('active', !isEn);
+  document.documentElement.lang = l;
+  document.querySelectorAll('.es').forEach(el => {
+    el.style.display = isEn ? 'none' : (el.tagName==='SPAN'?'inline':'block');
+  });
+  document.querySelectorAll('.en').forEach(el => {
+    el.style.display = isEn ? (el.tagName==='SPAN'?'inline':'block') : 'none';
+  });
+}
+
+// Scroll animations
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting){
+      e.target.style.opacity='1';
+      e.target.style.transform='translateY(0)';
+    }
+  });
+}, {threshold:0.1});
+
+document.querySelectorAll('.m-item,.concepto-inner>div').forEach(el => {
+  el.style.opacity='0';
+  el.style.transform='translateY(25px)';
+  el.style.transition='opacity .8s ease, transform .8s ease';
+  obs.observe(el);
+});
+</script>
+</body>
+</html>
