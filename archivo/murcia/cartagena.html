@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Cartagena · Paisaje Sonoro</title>
+
+  <meta
+    name="description"
+    data-es="Paisajes sonoros documentados del municipio de Cartagena, Región de Murcia."
+    data-en="Documented soundscapes from the municipality of Cartagena, Region of Murcia."
+    content="Paisajes sonoros documentados del municipio de Cartagena, Región de Murcia.">
+
+  <link rel="canonical" href="https://paisajesonoro.org/archivo/murcia/cartagena.html">
+  <link rel="alternate" hreflang="es" href="https://paisajesonoro.org/archivo/murcia/cartagena.html">
+  <link rel="alternate" hreflang="en" href="https://paisajesonoro.org/archivo/murcia/cartagena.html">
+  <link rel="alternate" hreflang="x-default" href="https://paisajesonoro.org/archivo/murcia/cartagena.html">
+
+  <meta property="og:title" content="Cartagena · Paisaje Sonoro">
+  <meta property="og:description" content="Paisajes sonoros documentados del municipio de Cartagena, Región de Murcia.">
+  <meta property="og:image" content="https://paisajesonoro.org/img/hero-grabacion.jpg">
+  <meta property="og:url" content="https://paisajesonoro.org/archivo/murcia/cartagena.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:locale:alternate" content="en_US">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cartagena · Paisaje Sonoro">
+  <meta name="twitter:description" content="Paisajes sonoros documentados del municipio de Cartagena, Región de Murcia.">
+  <meta name="twitter:image" content="https://paisajesonoro.org/img/hero-grabacion.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+
+  <!-- Tipografías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Leaflet + MarkerCluster (CDN) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
+
+  <!-- Estilos compartidos -->
+  <link rel="stylesheet" href="../../css/estilos.css">
+
+  <!-- Configuración del mapa para esta página: centrado en Cartagena, solo paisajes del municipio -->
+  <script>
+    window.MAPA_CONFIG = {
+      center: [37.6057, -0.9866],
+      zoom: 11,
+      filtroMunicipio: 'cartagena',
+      scrollWheelZoom: false
+    };
+  </script>
+
+  <!-- Scripts (orden importante) -->
+  <script src="../../js/lang.js" defer></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js" defer></script>
+  <script src="../../js/paisajes.js" defer></script>
+  <script src="../../js/mapa.js" defer></script>
+</head>
+<body>
+
+  <!-- TOGGLE ES/EN -->
+  <div class="lang-toggle">
+    <button class="lang-btn active" id="btn-es" onclick="setLang('es')">ES</button>
+    <div class="lang-divider"></div>
+    <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+  </div>
+
+  <!-- CABECERA -->
+  <header class="cabecera-interna">
+    <div class="cabecera-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../../index.html"><span class="es">Inicio</span><span class="en">Home</span></a>
+        <span class="sep">/</span>
+        <a href="../../archivo.html"><span class="es">Archivo</span><span class="en">Archive</span></a>
+        <span class="sep">/</span>
+        <span class="es">Cartagena</span><span class="en">Cartagena</span>
+      </nav>
+      <h1 class="cabecera-titulo">
+        <span class="es">Cartagena</span>
+        <span class="en">Cartagena</span>
+      </h1>
+      <p class="cabecera-sub">
+        <span class="es">Región de Murcia</span>
+        <span class="en">Region of Murcia</span>
+      </p>
+    </div>
+  </header>
+
+  <!-- DESCRIPCIÓN DEL MUNICIPIO -->
+  <section class="municipio-descripcion" id="municipio-desc">
+    <p>
+      <span class="es">Cargando descripción…</span>
+      <span class="en">Loading description…</span>
+    </p>
+    <p class="municipio-cita">
+      <span class="es">Texto adaptado de <a id="municipio-wiki-es" href="https://es.wikipedia.org/wiki/Cartagena_(España)" target="_blank" rel="noopener">Wikipedia</a> · CC BY-SA 4.0</span>
+      <span class="en">Text adapted from <a id="municipio-wiki-en" href="https://en.wikipedia.org/wiki/Cartagena,_Spain" target="_blank" rel="noopener">Wikipedia</a> · CC BY-SA 4.0</span>
+    </p>
+  </section>
+
+  <!-- MAPA LOCAL -->
+  <div class="mapa-local-contenedor">
+    <div id="mapa" class="mapa-local"></div>
+  </div>
+
+  <!-- CABECERA DE TARJETAS -->
+  <div class="tarjetas-header">
+    <span class="tarjetas-titulo">
+      <span class="es">Paisajes documentados</span>
+      <span class="en">Documented soundscapes</span>
+    </span>
+    <span class="tarjetas-contador"></span>
+  </div>
+
+  <!-- GRID DE TARJETAS -->
+  <main class="tarjetas-grid" id="tarjetas-grid"></main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>
+      <div class="f-marca">Proyecto Paisaje Sonoro</div>
+      <div class="f-contacto">
+        <span class="es">Contacto: </span>
+        <span class="en">Contact: </span>
+        <a href="mailto:contacto@paisajesonoro.org">contacto@PaisajeSonoro.org</a>
+      </div>
+    </div>
+    <div class="f-info">
+      <p>
+        <span class="es">Archivo permanente alojado en </span>
+        <span class="en">Permanent archive hosted on </span>
+        <a href="https://archive.org" target="_blank" rel="noopener">Internet Archive</a>
+      </p>
+      <p class="f-licencia">
+        <span class="es">España · Licencia Creative Commons BY-NC-SA 4.0</span>
+        <span class="en">Spain · Creative Commons BY-NC-SA 4.0 License</span>
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Playa de Isla Plana · Paisaje Sonoro</title>
+
+  <meta
+    name="description"
+    data-es="Paisaje sonoro de la cala de los Baños de la Marrana, en Isla Plana (Cartagena, Murcia). Atardecer de sábado: olas, gaviotas y la actividad lejana del Puerto de La Azohía."
+    data-en="Soundscape from the Baños de la Marrana cove, in Isla Plana (Cartagena, Murcia). Saturday sunset: waves, seagulls and the distant activity of La Azohía Harbour."
+    content="Paisaje sonoro de la cala de los Baños de la Marrana, en Isla Plana (Cartagena, Murcia). Atardecer de sábado: olas, gaviotas y la actividad lejana del Puerto de La Azohía.">
+
+  <link rel="canonical" href="https://paisajesonoro.org/archivo/murcia/cartagena/001-isla-plana.html">
+  <link rel="alternate" hreflang="es" href="https://paisajesonoro.org/archivo/murcia/cartagena/001-isla-plana.html">
+  <link rel="alternate" hreflang="en" href="https://paisajesonoro.org/archivo/murcia/cartagena/001-isla-plana.html">
+  <link rel="alternate" hreflang="x-default" href="https://paisajesonoro.org/archivo/murcia/cartagena/001-isla-plana.html">
+
+  <meta property="og:title" content="Playa de Isla Plana · Paisaje Sonoro">
+  <meta property="og:description" content="Paisaje sonoro de la cala de los Baños de la Marrana, en Isla Plana (Cartagena, Murcia).">
+  <meta property="og:image" content="https://archive.org/download/PaisajeSonoro-001-IslaPlana/001%20Isla%20Plana%20WEB.jpg">
+  <meta property="og:url" content="https://paisajesonoro.org/archivo/murcia/cartagena/001-isla-plana.html">
+  <meta property="og:type" content="music.song">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:locale:alternate" content="en_US">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Playa de Isla Plana · Paisaje Sonoro">
+  <meta name="twitter:description" content="Paisaje sonoro de la cala de los Baños de la Marrana, en Isla Plana.">
+  <meta name="twitter:image" content="https://archive.org/download/PaisajeSonoro-001-IslaPlana/001%20Isla%20Plana%20WEB.jpg">
+
+  <!-- Schema.org JSON-LD (lo rellena paisaje.js dinámicamente) -->
+  <script type="application/ld+json" id="schema-jsonld"></script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+
+  <!-- Tipografías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
+
+  <!-- Estilos compartidos -->
+  <link rel="stylesheet" href="../../../css/estilos.css">
+
+  <!-- Configuración: id del paisaje y mapa centrado en sus coordenadas -->
+  <script>
+    window.PAISAJE_ID = '001';
+    window.MAPA_CONFIG = {
+      center: [37.572883, -1.207950],
+      zoom: 14,
+      filtroPaisajeId: '001',
+      scrollWheelZoom: false
+    };
+  </script>
+
+  <!-- Scripts -->
+  <script src="../../../js/lang.js" defer></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js" defer></script>
+  <script src="../../../js/paisajes.js" defer></script>
+  <script src="../../../js/mapa.js" defer></script>
+  <script src="../../../js/paisaje.js" defer></script>
+</head>
+<body>
+
+  <!-- TOGGLE ES/EN -->
+  <div class="lang-toggle">
+    <button class="lang-btn active" id="btn-es" onclick="setLang('es')">ES</button>
+    <div class="lang-divider"></div>
+    <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+  </div>
+
+  <!-- CABECERA -->
+  <header class="paisaje-cabecera">
+    <div class="paisaje-cabecera-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../../../index.html"><span class="es">Inicio</span><span class="en">Home</span></a>
+        <span class="sep">/</span>
+        <a href="../../../archivo.html"><span class="es">Archivo</span><span class="en">Archive</span></a>
+        <span class="sep">/</span>
+        <a id="bc-municipio" href="#"></a>
+        <span class="sep">/</span>
+        <span id="bc-paisaje"></span>
+      </nav>
+      <h1 class="paisaje-titulo" id="p-titulo"></h1>
+      <p class="paisaje-lugar" id="p-lugar"></p>
+      <p class="paisaje-fecha" id="p-fecha"></p>
+    </div>
+  </header>
+
+  <!-- REPRODUCTOR DE AUDIO -->
+  <section class="paisaje-audio">
+    <div class="paisaje-audio-inner">
+      <p class="paisaje-audio-label">
+        <span class="es">Escuchar la grabación</span>
+        <span class="en">Listen to the recording</span>
+      </p>
+      <audio id="audio-player" controls preload="metadata">
+        <source id="audio-src" src="" type="audio/mpeg">
+        <span class="es">Tu navegador no admite el reproductor de audio.</span>
+        <span class="en">Your browser does not support the audio player.</span>
+      </audio>
+    </div>
+  </section>
+
+  <!-- HERO (foto a sangre) -->
+  <div class="paisaje-hero" id="paisaje-hero" role="img" aria-label="Fotografía del paisaje"></div>
+
+  <!-- MAPA -->
+  <div class="paisaje-mapa-cont">
+    <div id="mapa" class="paisaje-mapa"></div>
+  </div>
+
+  <!-- DESCRIPCIÓN NARRATIVA -->
+  <section class="paisaje-descripcion" id="p-descripcion"></section>
+
+  <!-- BLOQUES DE SONIDOS -->
+  <section class="paisaje-sonidos">
+    <div class="sonidos-bloque">
+      <p class="sonidos-label">
+        <span class="es">Sonidos principales</span>
+        <span class="en">Main sounds</span>
+      </p>
+      <p class="sonidos-texto" id="p-sonidos-principales"></p>
+    </div>
+    <div class="sonidos-bloque">
+      <p class="sonidos-label">
+        <span class="es">Sonidos de fondo</span>
+        <span class="en">Background sounds</span>
+      </p>
+      <p class="sonidos-texto" id="p-sonidos-fondo"></p>
+    </div>
+    <div class="sonidos-bloque">
+      <p class="sonidos-label">
+        <span class="es">Incidencias</span>
+        <span class="en">Incidents</span>
+      </p>
+      <p class="sonidos-texto" id="p-incidencias"></p>
+    </div>
+    <div class="sonidos-bloque">
+      <p class="sonidos-label">
+        <span class="es">Notas de campo</span>
+        <span class="en">Field notes</span>
+      </p>
+      <p class="sonidos-texto" id="p-notas"></p>
+    </div>
+  </section>
+
+  <!-- FICHA TÉCNICA -->
+  <section class="ficha-tecnica">
+
+    <div class="ficha-grupo">
+      <h3>
+        <span class="es">Localización</span>
+        <span class="en">Location</span>
+      </h3>
+      <dl class="ficha-grid">
+        <div class="ficha-fila"><dt><span class="es">Coordenadas</span><span class="en">Coordinates</span></dt><dd id="f-coord"></dd></div>
+        <div class="ficha-fila"><dt><span class="es">Altitud</span><span class="en">Altitude</span></dt><dd id="f-altitud"></dd></div>
+        <div class="ficha-fila"><dt><span class="es">Rumbo</span><span class="en">Bearing</span></dt><dd id="f-rumbo"></dd></div>
+        <div class="ficha-fila"><dt><span class="es">Municipio</span><span class="en">Municipality</span></dt><dd id="f-municipio"></dd></div>
+        <div class="ficha-fila"><dt><span class="es">Comunidad</span><span class="en">Region</span></dt><dd id="f-comunidad"></dd></div>
+      </dl>
+    </div>
+
+    <div class="ficha-grupo">
+      <h3>
+        <span class="es">Tiempo</span>
+        <span class="en">Time</span>
+      </h3>
+      <dl class="ficha-grid">
+        <div class="ficha-fila"><dt><span class="es">Fecha</span><span class="en">Date</span></dt><dd id="f-fecha"></dd></div>
+        <div class="ficha-fila"><dt><span class="es">Hora inicio</span><span class="en">Start time</span></dt><dd id="f-hora-inicio"></dd></div>
+        <div class="ficha-fila"><dt><span class="es">Hora fin</span><span class="en">End time</span></dt><dd id="f-hora-fin"></dd></div>
+        <div class="ficha-fila"><dt><span class="es">Duración publicada</span><span class="en">Published duration</span></dt><dd id="f-duracion"></dd></div>
+        <div class="ficha-fila"><dt><span class="es">Estación</span><span class="en">Season</span></dt><dd id="f-estacion"></dd></div>
+        <div class="ficha-fila"><dt><span class="es">Tipo de día</span><span class="en">Day type</span></dt><dd id="f-tipo-dia"></dd></div>
+        <div class="ficha-fila"><dt><span class="es">Acontecimiento</span><span class="en">Event</span></dt><dd id="f-acontecimiento"></dd></div>
+      </dl>
+    </div>
+
+    <div class="ficha-grupo">
+      <h3>
+        <span class="es">Condiciones</span>
+        <span class="en">Conditions</span>
+      </h3>
+      <dl class="ficha-grid">
+        <div class="ficha-fila"><dt><span class="es">Tipo de paisaje</span><span class="en">Landscape type</span></dt><dd id="f-tipo"></dd></div>
+        <div class="ficha-fila"><dt><span class="es">Viento</span><span class="en">Wind</span></dt><dd id="f-viento"></dd></div>
+        <div class="ficha-fila"><dt><span class="es">Nubosidad</span><span class="en">Cloudiness</span></dt><dd id="f-nubosidad"></dd></div>
+        <div class="ficha-fila"><dt><span class="es">Precipitación</span><span class="en">Precipitation</span></dt><dd id="f-precipitacion"></dd></div>
+        <div class="ficha-fila"><dt><span class="es">Temperatura</span><span class="en">Temperature</span></dt><dd id="f-temperatura"></dd></div>
+        <div class="ficha-fila"><dt><span class="es">Humedad</span><span class="en">Humidity</span></dt><dd id="f-humedad"></dd></div>
+        <div class="ficha-fila"><dt><span class="es">Luz ambiente</span><span class="en">Ambient light</span></dt><dd id="f-luz"></dd></div>
+        <div class="ficha-fila"><dt><span class="es">Campo magnético</span><span class="en">Magnetic field</span></dt><dd id="f-magnetico"></dd></div>
+        <div class="ficha-fila"><dt><span class="es">Satélites GPS</span><span class="en">GPS satellites</span></dt><dd id="f-satelites"></dd></div>
+        <div class="ficha-fila"><dt><span class="es">Error horizontal</span><span class="en">Horizontal error</span></dt><dd id="f-error-h"></dd></div>
+      </dl>
+    </div>
+
+    <div class="ficha-grupo">
+      <h3>
+        <span class="es">Equipo</span>
+        <span class="en">Equipment</span>
+      </h3>
+      <dl class="ficha-grid">
+        <div class="ficha-fila"><dt><span class="es">Grabadora</span><span class="en">Recorder</span></dt><dd id="f-grabadora"></dd></div>
+        <div class="ficha-fila"><dt><span class="es">Micrófonos</span><span class="en">Microphones</span></dt><dd id="f-microfonos"></dd></div>
+        <div class="ficha-fila"><dt><span class="es">Configuración estéreo</span><span class="en">Stereo configuration</span></dt><dd id="f-config"></dd></div>
+        <div class="ficha-fila"><dt><span class="es">Frecuencia / bits</span><span class="en">Sample rate / bits</span></dt><dd id="f-frec-bits"></dd></div>
+        <div class="ficha-fila"><dt><span class="es">Modo</span><span class="en">Mode</span></dt><dd id="f-modo"></dd></div>
+        <div class="ficha-fila"><dt><span class="es">Ganancia</span><span class="en">Gain</span></dt><dd id="f-ganancia"></dd></div>
+        <div class="ficha-fila"><dt><span class="es">Altura del trípode</span><span class="en">Tripod height</span></dt><dd id="f-altura"></dd></div>
+      </dl>
+    </div>
+
+  </section>
+
+  <!-- PIE DE METADATOS -->
+  <section class="paisaje-meta">
+    <div class="paisaje-meta-inner">
+      <span id="m-duracion"></span>
+      <span id="m-fecha-grab"></span>
+      <span id="m-fecha-pub"></span>
+      <span id="m-protocolo"></span>
+      <a id="m-ia-link" href="#" target="_blank" rel="noopener">
+        <span class="es">Ver en Internet Archive</span>
+        <span class="en">View on Internet Archive</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- NAVEGACIÓN ANTERIOR / SIGUIENTE -->
+  <nav class="paisaje-nav" aria-label="Navegación entre paisajes">
+    <a id="nav-prev" class="nav-link prev" href="#">
+      <span class="nav-label">
+        <span class="es">← Anterior</span>
+        <span class="en">← Previous</span>
+      </span>
+      <span class="nav-titulo"></span>
+    </a>
+    <a id="nav-next" class="nav-link next" href="#">
+      <span class="nav-label">
+        <span class="es">Siguiente →</span>
+        <span class="en">Next →</span>
+      </span>
+      <span class="nav-titulo"></span>
+    </a>
+  </nav>
+
+  <!-- NAVEGACIÓN SECUNDARIA -->
+  <div class="paisaje-nav-secundaria">
+    <a id="nav-municipio" href="#">
+      <span class="es">Volver a </span>
+      <span class="en">Back to </span>
+      <span class="nav-titulo"></span>
+    </a>
+    <a id="nav-archivo" href="#">
+      <span class="es">Volver al archivo</span>
+      <span class="en">Back to archive</span>
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>
+      <div class="f-marca">Proyecto Paisaje Sonoro</div>
+      <div class="f-contacto">
+        <span class="es">Contacto: </span>
+        <span class="en">Contact: </span>
+        <a href="mailto:contacto@paisajesonoro.org">contacto@PaisajeSonoro.org</a>
+      </div>
+    </div>
+    <div class="f-info">
+      <p>
+        <span class="es">Archivo permanente alojado en </span>
+        <span class="en">Permanent archive hosted on </span>
+        <a href="https://archive.org" target="_blank" rel="noopener">Internet Archive</a>
+      </p>
+      <p class="f-licencia">
+        <span class="es">España · Licencia Creative Commons BY-NC-SA 4.0</span>
+        <span class="en">Spain · Creative Commons BY-NC-SA 4.0 License</span>
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>

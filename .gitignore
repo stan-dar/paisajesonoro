@@ -1,0 +1,38 @@
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores
+.claude/
+.vscode/
+.idea/
+*.swp
+*~
+
+# Archivos personales del proyecto (nunca se suben)
+fichas-trabajo/
+audio-bruto/
+fotos-originales/
+notas-personales/
+
+# Fichas de campo en cualquier formato (vive en disco local del responsable)
+*.docx
+*.odt
+
+# Audio bruto
+*.wav
+
+# Restos de versión provisional anterior
+Paisaje 1 Isla Plana 18042026/
+ficha_paisaje_sonoro_v2.odt
+protocolo_edicion.odt
+
+# Temporales
+*.log
+*.tmp
+node_modules/
+
+# Office en edición
+~$*.docx
+~$*.xlsx

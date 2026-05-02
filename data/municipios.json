@@ -1,0 +1,14 @@
+{
+  "cartagena": {
+    "nombre_es": "Cartagena",
+    "nombre_en": "Cartagena",
+    "comunidad": "murcia",
+    "comunidad_nombre_es": "Región de Murcia",
+    "comunidad_nombre_en": "Region of Murcia",
+    "coordenadas_centro": [37.6057, -0.9866],
+    "descripcion_es": "Cartagena es una ciudad portuaria del sureste de España, fundada en el siglo III a. C. por los cartagineses como Qart Hadasht y refundada por Roma como Carthago Nova. Su bahía natural, singular en el Mediterráneo, ha condicionado una historia milenaria como puerto comercial, base militar y centro minero, en la que conviven hoy un denso patrimonio romano, modernista y militar. Su término municipal abarca también una larga franja litoral con calas, playas abiertas y pueblos de pescadores en torno a Mazarrón y La Manga.",
+    "descripcion_en": "Cartagena is a port city in southeastern Spain, founded in the 3rd century BC by the Carthaginians as Qart Hadasht and refounded by Rome as Carthago Nova. Its natural bay, singular in the Mediterranean, has shaped a millennial history as a commercial port, military base and mining centre, where today a dense Roman, Modernist and military heritage coexists. Its municipal area also includes a long coastal strip with coves, open beaches and fishing villages around Mazarrón and La Manga.",
+    "wikipedia_url_es": "https://es.wikipedia.org/wiki/Cartagena_(España)",
+    "wikipedia_url_en": "https://en.wikipedia.org/wiki/Cartagena,_Spain"
+  }
+}

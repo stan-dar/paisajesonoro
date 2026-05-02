@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Archivo · Paisaje Sonoro</title>
+
+  <meta
+    name="description"
+    data-es="Mapa interactivo y archivo de paisajes sonoros documentados de España."
+    data-en="Interactive map and archive of documented soundscapes from Spain."
+    content="Mapa interactivo y archivo de paisajes sonoros documentados de España.">
+
+  <link rel="canonical" href="https://paisajesonoro.org/archivo.html">
+  <link rel="alternate" hreflang="es" href="https://paisajesonoro.org/archivo.html">
+  <link rel="alternate" hreflang="en" href="https://paisajesonoro.org/archivo.html">
+  <link rel="alternate" hreflang="x-default" href="https://paisajesonoro.org/archivo.html">
+
+  <meta property="og:title" content="Archivo · Paisaje Sonoro">
+  <meta property="og:description" content="Mapa interactivo y archivo de paisajes sonoros documentados de España.">
+  <meta property="og:image" content="https://paisajesonoro.org/img/hero-grabacion.jpg">
+  <meta property="og:url" content="https://paisajesonoro.org/archivo.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:locale:alternate" content="en_US">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Archivo · Paisaje Sonoro">
+  <meta name="twitter:description" content="Mapa interactivo y archivo de paisajes sonoros documentados de España.">
+  <meta name="twitter:image" content="https://paisajesonoro.org/img/hero-grabacion.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Tipografías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Leaflet + MarkerCluster (CDN) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
+
+  <!-- Estilos compartidos -->
+  <link rel="stylesheet" href="css/estilos.css">
+
+  <!-- Scripts (orden importante: Leaflet antes que mapa.js, paisajes.js antes que mapa.js) -->
+  <script src="js/lang.js" defer></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js" defer></script>
+  <script src="js/paisajes.js" defer></script>
+  <script src="js/mapa.js" defer></script>
+</head>
+<body>
+
+  <!-- TOGGLE ES/EN -->
+  <div class="lang-toggle">
+    <button class="lang-btn active" id="btn-es" onclick="setLang('es')">ES</button>
+    <div class="lang-divider"></div>
+    <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+  </div>
+
+  <!-- CABECERA -->
+  <header class="cabecera-interna">
+    <div class="cabecera-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html"><span class="es">Inicio</span><span class="en">Home</span></a>
+        <span class="sep">/</span>
+        <span class="es">Archivo</span><span class="en">Archive</span>
+      </nav>
+      <h1 class="cabecera-titulo">
+        <span class="es">Archivo</span>
+        <span class="en">Archive</span>
+      </h1>
+      <p class="cabecera-sub">
+        <span class="es">Mapa interactivo y grabaciones documentadas</span>
+        <span class="en">Interactive map and documented recordings</span>
+      </p>
+    </div>
+  </header>
+
+  <!-- FILTROS -->
+  <div class="filtros-bar">
+    <div class="filtros-inner" id="filtros"></div>
+  </div>
+
+  <!-- MAPA + LISTA LATERAL -->
+  <main class="archivo-main">
+    <div class="mapa-contenedor">
+      <div id="mapa"></div>
+    </div>
+    <aside class="archivo-sidebar">
+      <div class="sidebar-header">
+        <span class="sidebar-titulo">
+          <span class="es">Paisajes documentados</span>
+          <span class="en">Documented soundscapes</span>
+        </span>
+        <span class="sidebar-contador"></span>
+      </div>
+      <div id="sidebar-lista"></div>
+    </aside>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>
+      <div class="f-marca">Proyecto Paisaje Sonoro</div>
+      <div class="f-contacto">
+        <span class="es">Contacto: </span>
+        <span class="en">Contact: </span>
+        <a href="mailto:contacto@paisajesonoro.org">contacto@PaisajeSonoro.org</a>
+      </div>
+    </div>
+    <div class="f-info">
+      <p>
+        <span class="es">Archivo permanente alojado en </span>
+        <span class="en">Permanent archive hosted on </span>
+        <a href="https://archive.org" target="_blank" rel="noopener">Internet Archive</a>
+      </p>
+      <p class="f-licencia">
+        <span class="es">España · Licencia Creative Commons BY-NC-SA 4.0</span>
+        <span class="en">Spain · Creative Commons BY-NC-SA 4.0 License</span>
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
