@@ -154,10 +154,10 @@
       html += `<div class="municipio-grupo">`;
       html += `
         <a class="municipio-link" href="${munUrl}">
-          <h3 class="municipio-cabecera">
+          <h2 class="municipio-cabecera">
             <span class="es">${mun.nombre_es || munSlug}</span>
             <span class="en">${mun.nombre_en || munSlug}</span>
-          </h3>
+          </h2>
           <p class="municipio-comunidad">
             <span class="es">${mun.comunidad_nombre_es || ''}</span>
             <span class="en">${mun.comunidad_nombre_en || ''}</span>
@@ -232,10 +232,10 @@
           <span class="tarjeta-num">${p.id}</span>
         </div>
         <div class="tarjeta-info">
-          <h3 class="tarjeta-titulo">
+          <h2 class="tarjeta-titulo">
             <span class="es">${p.titulo_es}</span>
             <span class="en">${p.titulo_en}</span>
-          </h3>
+          </h2>
           <p class="tarjeta-lugar">
             <span class="es">${p.lugar_especifico_es}</span>
             <span class="en">${p.lugar_especifico_en}</span>
