@@ -36,10 +36,15 @@
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
-  <!-- Tipografías -->
+  <!-- Tipografías (carga asíncrona para no bloquear el render) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+  <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap"
+        onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap">
+  </noscript>
 
   <!-- Estilos compartidos -->
   <link rel="stylesheet" href="css/estilos.css">
@@ -56,6 +61,8 @@
     <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
   </div>
 
+
+  <main>
 
   <!-- SECCIÓN: Hero a sangre con la imagen de la persona grabando -->
   <section class="hero">
@@ -93,7 +100,7 @@
         <span class="en">Interactive map and documented recordings</span>
       </p>
       <div class="acceso-onda">
-        <img src="img/onda-acceso.png" alt="">
+        <img src="img/onda-acceso.png" alt="" width="800" height="304">
       </div>
       <span class="acceso-cta">
         <span class="es">Entrar al archivo →</span>
@@ -356,6 +363,8 @@
     </div>
   </section>
 
+
+  </main>
 
   <!-- SECCIÓN: Footer -->
   <footer>

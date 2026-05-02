@@ -36,10 +36,15 @@
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
 
-  <!-- Tipografías -->
+  <!-- Tipografías (carga asíncrona para no bloquear el render) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+  <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap"
+        onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap">
+  </noscript>
 
   <!-- Leaflet -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
@@ -76,6 +81,8 @@
     <div class="lang-divider"></div>
     <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
   </div>
+
+  <main>
 
   <!-- CABECERA -->
   <header class="paisaje-cabecera">
@@ -267,6 +274,8 @@
       <span class="en">Back to archive</span>
     </a>
   </div>
+
+  </main>
 
   <!-- FOOTER -->
   <footer>
