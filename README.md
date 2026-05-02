@@ -41,14 +41,12 @@ El proyecto se inscribe en la tradición inaugurada por R. Murray Schafer y el W
 ├── favicon.svg
 ├── CNAME                                   Dominio personalizado
 ├── robots.txt
-├── sitemap.xml
-├── briefing.md                             Marco permanente del proyecto
-└── workflow-paisajes.md                    Procedimiento para añadir paisajes
+└── sitemap.xml
 ```
 
 ### Cómo añadir un nuevo paisaje
 
-El procedimiento operativo está documentado paso a paso en [`workflow-paisajes.md`](workflow-paisajes.md). El audio y las fotografías se suben a Internet Archive; en este repositorio solo se actualizan los datos JSON y la página HTML del paisaje.
+Cada paisaje requiere subir el audio y la fotografía a Internet Archive y añadir una entrada en `data/paisajes.json` con sus metadatos. Las páginas HTML se generan dinámicamente desde ese JSON.
 
 ### Stack tecnológico
 
@@ -78,7 +76,7 @@ See the tree above (in the Spanish section). File names and structure are identi
 
 ### How to add a new soundscape
 
-The operational procedure is documented step by step in [`workflow-paisajes.md`](workflow-paisajes.md). Audio and photographs are uploaded to Internet Archive; this repository only stores the JSON data and the HTML page of the soundscape.
+Each soundscape requires uploading the audio and photograph to Internet Archive and adding an entry to `data/paisajes.json` with its metadata. HTML pages are generated dynamically from that JSON.
 
 ### Tech stack
 

@@ -36,3 +36,12 @@ node_modules/
 # Office en edición
 ~$*.docx
 ~$*.xlsx
+
+# Documentación interna del proyecto (vive en local, no se publica)
+briefing.md
+workflow-paisajes.md
+fases-implementacion.md
+
+# Capturas y PDFs de auditorías (material de trabajo, no de archivo)
+Captura de pantalla*.png
+PageSpeed Insights*.pdf
