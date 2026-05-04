@@ -138,6 +138,7 @@
 
     // Imagen hero (carga prioritaria como <img>) + indicador de carga
     if (p.imagen_url) {
+      const wrapEl = document.getElementById('paisaje-hero-wrap');
       const heroEl = document.getElementById('paisaje-hero');
       const statusEl = document.getElementById('paisaje-hero-status');
       const msgLoad = statusEl && statusEl.querySelector('[data-state="loading"]');
@@ -147,6 +148,9 @@
         heroEl.addEventListener('load', () => {
           imgOk = true;
           if (statusEl) statusEl.hidden = true;
+          // Quita el min-height del wrapper para que no quede strip residual
+          // por debajo de la imagen en pantallas estrechas (móvil vertical).
+          if (wrapEl) wrapEl.classList.add('loaded');
         });
         heroEl.addEventListener('error', () => {
           if (msgLoad) msgLoad.hidden = true;

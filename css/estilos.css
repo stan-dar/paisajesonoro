@@ -1440,6 +1440,12 @@ footer {
   background-color: var(--arena-claro);
 }
 
+/* Una vez cargada la imagen, el wrapper se ajusta a la altura natural
+   de la imagen y desaparece cualquier strip residual debajo. */
+.paisaje-hero-wrap.loaded {
+  min-height: 0;
+}
+
 .paisaje-hero {
   display: block;
   width: 100%;
@@ -1457,6 +1463,11 @@ footer {
   justify-content: center;
   pointer-events: none;
   padding: 1.5rem;
+}
+
+/* El atributo [hidden] tiene que ganarle a `display: flex` de arriba. */
+.paisaje-hero-status[hidden] {
+  display: none;
 }
 
 .paisaje-hero-msg {
