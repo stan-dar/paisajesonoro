@@ -16,34 +16,6 @@ El proyecto se inscribe en la tradición inaugurada por R. Murray Schafer y el W
 - **Idiomas**: español e inglés (toda página, todo metadato)
 - **Contacto**: [contacto@PaisajeSonoro.org](mailto:contacto@paisajesonoro.org)
 
-### Estructura del repositorio
-
-```
-/
-├── index.html                              Presentación + protocolo
-├── archivo.html                            Mapa interactivo + acceso a paisajes
-├── archivo/
-│   └── murcia/
-│       ├── cartagena.html                  Índice del municipio
-│       └── cartagena/
-│           └── 001-isla-plana.html         Página individual de paisaje
-├── data/
-│   ├── paisajes.json                       Datos de todas las grabaciones
-│   └── municipios.json                     Datos de los municipios
-├── css/
-│   └── estilos.css                         CSS compartido
-├── js/
-│   ├── lang.js                             Toggle ES/EN
-│   ├── mapa.js                             Lógica del mapa Leaflet
-│   ├── paisajes.js                         Renderizado dinámico desde JSON
-│   └── paisaje.js                          Plantilla de página individual
-├── img/                                    Imágenes del index
-├── favicon.svg
-├── CNAME                                   Dominio personalizado
-├── robots.txt
-└── sitemap.xml
-```
-
 ### Stack tecnológico
 
 Sitio estático servido desde GitHub Pages. Mapas con Leaflet.js sobre OpenStreetMap (capa CartoDB Voyager). Tipografías Cormorant Garamond y Jost desde Google Fonts. Sin dependencias propietarias.
