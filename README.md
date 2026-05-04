@@ -44,10 +44,6 @@ El proyecto se inscribe en la tradición inaugurada por R. Murray Schafer y el W
 └── sitemap.xml
 ```
 
-### Cómo añadir un nuevo paisaje
-
-Cada paisaje requiere subir el audio y la fotografía a Internet Archive y añadir una entrada en `data/paisajes.json` con sus metadatos. Las páginas HTML se generan dinámicamente desde ese JSON.
-
 ### Stack tecnológico
 
 Sitio estático servido desde GitHub Pages. Mapas con Leaflet.js sobre OpenStreetMap (capa CartoDB Voyager). Tipografías Cormorant Garamond y Jost desde Google Fonts. Sin dependencias propietarias.
@@ -73,10 +69,6 @@ The project belongs to the tradition opened by R. Murray Schafer and the World S
 ### Repository structure
 
 See the tree above (in the Spanish section). File names and structure are identical for both languages.
-
-### How to add a new soundscape
-
-Each soundscape requires uploading the audio and photograph to Internet Archive and adding an entry to `data/paisajes.json` with its metadata. HTML pages are generated dynamically from that JSON.
 
 ### Tech stack
 
