@@ -115,10 +115,10 @@
       if (audioEl) audioEl.load();
     }
 
-    // Imagen hero
+    // Imagen hero (carga prioritaria como <img>)
     if (p.imagen_url) {
       const heroEl = document.getElementById('paisaje-hero');
-      if (heroEl) heroEl.style.backgroundImage = `url('${p.imagen_url}')`;
+      if (heroEl) heroEl.src = p.imagen_url;
     }
 
     // Descripción narrativa

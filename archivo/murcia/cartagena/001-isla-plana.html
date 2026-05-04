@@ -19,7 +19,7 @@
 
   <meta property="og:title" content="Playa de Isla Plana · Paisaje Sonoro">
   <meta property="og:description" content="Paisaje sonoro de la cala de los Baños de la Marrana, en Isla Plana (Cartagena, Murcia).">
-  <meta property="og:image" content="https://archive.org/download/PaisajeSonoro-001-IslaPlana/001%20Isla%20Plana%20WEB.jpg">
+  <meta property="og:image" content="https://archive.org/download/PaisajeSonoro-001-IslaPlana/001%20Isla%20Plana%20WEBP.webp">
   <meta property="og:url" content="https://paisajesonoro.org/archivo/murcia/cartagena/001-isla-plana.html">
   <meta property="og:type" content="music.song">
   <meta property="og:locale" content="es_ES">
@@ -28,13 +28,18 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Playa de Isla Plana · Paisaje Sonoro">
   <meta name="twitter:description" content="Paisaje sonoro de la cala de los Baños de la Marrana, en Isla Plana.">
-  <meta name="twitter:image" content="https://archive.org/download/PaisajeSonoro-001-IslaPlana/001%20Isla%20Plana%20WEB.jpg">
+  <meta name="twitter:image" content="https://archive.org/download/PaisajeSonoro-001-IslaPlana/001%20Isla%20Plana%20WEBP.webp">
 
   <!-- Schema.org JSON-LD (lo rellena paisaje.js dinámicamente) -->
   <script type="application/ld+json" id="schema-jsonld"></script>
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../img/favicon/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../../img/favicon/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../img/favicon/favicon-180.png">
+  <link rel="manifest" href="../../../site.webmanifest">
+  <meta name="theme-color" content="#3d2b1f">
 
   <!-- Tipografías (carga asíncrona para no bloquear el render) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -114,11 +119,15 @@
         <span class="es">Tu navegador no admite el reproductor de audio.</span>
         <span class="en">Your browser does not support the audio player.</span>
       </audio>
+      <p class="paisaje-audio-nota">
+        <span class="es">La experiencia de escucha mejora con auriculares y reproducción estéreo.</span>
+        <span class="en">Best experienced with headphones and stereo playback.</span>
+      </p>
     </div>
   </section>
 
   <!-- HERO (foto a sangre) -->
-  <div class="paisaje-hero" id="paisaje-hero" role="img" aria-label="Fotografía del paisaje"></div>
+  <img id="paisaje-hero" class="paisaje-hero" alt="Fotografía del paisaje" loading="eager" fetchpriority="high" decoding="async">
 
   <!-- MAPA -->
   <div class="paisaje-mapa-cont">

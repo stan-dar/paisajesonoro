@@ -638,6 +638,13 @@ footer {
   color: var(--niebla);
 }
 
+.f-privacidad {
+  margin-top: .35rem;
+  color: var(--niebla);
+  font-size: .8rem;
+  font-style: italic;
+}
+
 
 /* === ANIMACIONES === */
 @keyframes fadeUp {
@@ -662,6 +669,13 @@ footer {
   .hero {
     padding: 3rem 1.5rem 2rem;
     background-position: center center;
+  }
+
+  /* En móvil vertical, variante con encuadre portrait del hero */
+  @media (orientation: portrait) {
+    .hero {
+      background-image: url('../img/hero-grabacion-movil.jpg');
+    }
   }
 
   .hero-content {
@@ -1397,15 +1411,23 @@ footer {
   height: 50px;
 }
 
+.paisaje-audio-nota {
+  font-size: .85rem;
+  font-style: italic;
+  color: var(--niebla);
+  margin: .25rem 0 0;
+  letter-spacing: .02em;
+}
 
-/* === Hero (foto a sangre) === */
+
+/* === Hero (foto a sangre) ===
+   Como <img> a ancho completo y altura natural: la imagen se ve íntegra
+   en cualquier orientación de pantalla, sin recortes. */
 .paisaje-hero {
+  display: block;
   width: 100%;
-  height: 60vh;
-  min-height: 400px;
+  height: auto;
   background-color: var(--arena-claro);
-  background-size: cover;
-  background-position: center;
 }
 
 
@@ -1651,8 +1673,7 @@ footer {
   }
 
   .paisaje-hero {
-    height: 45vh;
-    min-height: 280px;
+    /* En móvil mantenemos ratio natural: nada que sobreescribir. */
   }
 
   .paisaje-mapa {
