@@ -1419,15 +1419,58 @@ footer {
   letter-spacing: .02em;
 }
 
+.paisaje-audio-error {
+  font-size: .85rem;
+  font-style: italic;
+  color: var(--arena-claro);
+  margin: .35rem 0 0;
+  letter-spacing: .02em;
+  border-left: 2px solid var(--arena);
+  padding-left: .65rem;
+}
+
 
 /* === Hero (foto a sangre) ===
    Como <img> a ancho completo y altura natural: la imagen se ve íntegra
    en cualquier orientación de pantalla, sin recortes. */
+.paisaje-hero-wrap {
+  position: relative;
+  width: 100%;
+  min-height: 220px;
+  background-color: var(--arena-claro);
+}
+
 .paisaje-hero {
   display: block;
   width: 100%;
   height: auto;
   background-color: var(--arena-claro);
+}
+
+/* Mensaje superpuesto mientras la imagen carga desde Internet Archive,
+   o mensaje de error/retry si no llega en 15 s. */
+.paisaje-hero-status {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  padding: 1.5rem;
+}
+
+.paisaje-hero-msg {
+  margin: 0;
+  max-width: 30rem;
+  font-size: .85rem;
+  font-style: italic;
+  letter-spacing: .02em;
+  color: var(--tierra-medio);
+  text-align: center;
+}
+
+.paisaje-hero-msg[data-state="error"] {
+  color: var(--tierra);
 }
 
 

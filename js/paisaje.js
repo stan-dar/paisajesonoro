@@ -108,17 +108,59 @@
     setHtml('p-lugar',  `<span class="es">${p.lugar_especifico_es}</span><span class="en">${p.lugar_especifico_en}</span>`);
     setHtml('p-fecha',  `<span class="es">${fmtFechaCompleta(p.fecha, 'es')}</span><span class="en">${fmtFechaEn(p.fecha)}</span>`);
 
-    // Audio
+    // Audio + control de error/lentitud (Internet Archive puede tardar)
     if (p.audio_url) {
       setAttr('audio-src', 'src', p.audio_url);
       const audioEl = document.getElementById('audio-player');
-      if (audioEl) audioEl.load();
+      const audioErr = document.getElementById('paisaje-audio-error');
+      if (audioEl) {
+        audioEl.load();
+        if (audioErr) {
+          let audioOk = false;
+          // El audio se considera disponible cuando hay metadata o se puede reproducir.
+          ['loadedmetadata', 'canplay', 'playing'].forEach(ev => {
+            audioEl.addEventListener(ev, () => {
+              audioOk = true;
+              audioErr.hidden = true;
+            });
+          });
+          // Errores explícitos: red caída, recurso bloqueado o stalled mantenido.
+          ['error', 'stalled'].forEach(ev => {
+            audioEl.addEventListener(ev, () => {
+              if (!audioOk) audioErr.hidden = false;
+            });
+          });
+          // Si en 15 s no hay señal de vida, mostramos el aviso.
+          setTimeout(() => { if (!audioOk) audioErr.hidden = false; }, 15000);
+        }
+      }
     }
 
-    // Imagen hero (carga prioritaria como <img>)
+    // Imagen hero (carga prioritaria como <img>) + indicador de carga
     if (p.imagen_url) {
       const heroEl = document.getElementById('paisaje-hero');
-      if (heroEl) heroEl.src = p.imagen_url;
+      const statusEl = document.getElementById('paisaje-hero-status');
+      const msgLoad = statusEl && statusEl.querySelector('[data-state="loading"]');
+      const msgErr  = statusEl && statusEl.querySelector('[data-state="error"]');
+      if (heroEl) {
+        let imgOk = false;
+        heroEl.addEventListener('load', () => {
+          imgOk = true;
+          if (statusEl) statusEl.hidden = true;
+        });
+        heroEl.addEventListener('error', () => {
+          if (msgLoad) msgLoad.hidden = true;
+          if (msgErr) msgErr.hidden = false;
+        });
+        // Timeout: si en 15 s no ha cargado, cambiamos el mensaje a error/retry.
+        setTimeout(() => {
+          if (!imgOk) {
+            if (msgLoad) msgLoad.hidden = true;
+            if (msgErr) msgErr.hidden = false;
+          }
+        }, 15000);
+        heroEl.src = p.imagen_url;
+      }
     }
 
     // Descripción narrativa

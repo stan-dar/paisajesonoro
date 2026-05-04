@@ -123,11 +123,27 @@
         <span class="es">La experiencia de escucha mejora con auriculares y reproducción estéreo.</span>
         <span class="en">Best experienced with headphones and stereo playback.</span>
       </p>
+      <p class="paisaje-audio-error" id="paisaje-audio-error" hidden aria-live="polite">
+        <span class="es">La grabación tarda en llegar desde Internet Archive. Espera unos segundos, recarga la página o vuelve en un minuto.</span>
+        <span class="en">The recording is slow to load from Internet Archive. Wait a few seconds, reload the page or try again in a minute.</span>
+      </p>
     </div>
   </section>
 
-  <!-- HERO (foto a sangre) -->
-  <img id="paisaje-hero" class="paisaje-hero" alt="Fotografía del paisaje" loading="eager" fetchpriority="high" decoding="async">
+  <!-- HERO (foto a sangre) con indicador de carga -->
+  <div class="paisaje-hero-wrap" id="paisaje-hero-wrap">
+    <img id="paisaje-hero" class="paisaje-hero" alt="Fotografía del paisaje" loading="eager" fetchpriority="high" decoding="async">
+    <div class="paisaje-hero-status" id="paisaje-hero-status" aria-live="polite">
+      <p class="paisaje-hero-msg" data-state="loading">
+        <span class="es">Cargando imagen desde Internet Archive…</span>
+        <span class="en">Loading image from Internet Archive…</span>
+      </p>
+      <p class="paisaje-hero-msg" data-state="error" hidden>
+        <span class="es">La imagen tarda en llegar desde Internet Archive. Recarga la página o vuelve a intentarlo en un minuto.</span>
+        <span class="en">The image is slow to load from Internet Archive. Reload the page or try again in a minute.</span>
+      </p>
+    </div>
+  </div>
 
   <!-- MAPA -->
   <div class="paisaje-mapa-cont">
