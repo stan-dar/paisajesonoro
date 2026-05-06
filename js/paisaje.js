@@ -211,8 +211,10 @@
       set('f-config', p.equipo.configuracion || '—');
       set('f-frec-bits', `${p.equipo.frecuencia_muestreo_khz} kHz / ${p.equipo.bits} bits`);
       set('f-modo', p.equipo.modo || '—');
-      set('f-ganancia', cap(p.equipo.ganancia));
-      set('f-altura', fmt(p.equipo.altura_tripode_cm, 'cm'));
+      setHtml('f-ecualizacion',
+        `<span class="es">${p.equipo.ecualizacion_es || '—'}</span>` +
+        `<span class="en">${p.equipo.ecualizacion_en || '—'}</span>`);
+      set('f-edicion', p.equipo.edicion || '—');
     }
 
     // Pie con metadatos

@@ -36,8 +36,9 @@
       "frecuencia_muestreo_khz": 44.1,
       "bits": 16,
       "modo": "estéreo",
-      "ganancia": "high",
-      "altura_tripode_cm": 140
+      "ecualizacion_es": "No aplicada",
+      "ecualizacion_en": "Not applied",
+      "edicion": "Tascam DP-32 SD"
     },
     "audio_url": "https://archive.org/download/PaisajeSonoro-001-IslaPlana/001%20Isla%20Plana%20Audio%20MP3.mp3",
     "audio_url_wav": "",
