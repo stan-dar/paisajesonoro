@@ -19,7 +19,21 @@
   let cluster;
 
   function iniciarMapa() {
-    mapa = L.map('mapa', { scrollWheelZoom: config.scrollWheelZoom }).setView(config.center, config.zoom);
+    // gestureHandling: en móvil exige dos dedos para mover el mapa (de modo
+    // que el dedo simple haga scroll de la página); en escritorio exige
+    // Ctrl + rueda para hacer zoom. Esto evita que al desplazarse por la
+    // página el usuario quede "atrapado" dentro del mapa.
+    mapa = L.map('mapa', {
+      gestureHandling: true,
+      gestureHandlingOptions: {
+        text: {
+          touch: 'Usa dos dedos para mover el mapa',
+          scroll: 'Usa Ctrl + scroll para hacer zoom',
+          scrollMac: 'Usa ⌘ + scroll para hacer zoom'
+        },
+        duration: 1200
+      }
+    }).setView(config.center, config.zoom);
 
     const voyager = L.tileLayer(
       'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
@@ -56,12 +70,6 @@
 
     cluster = L.markerClusterGroup({ showCoverageOnHover: false });
     mapa.addLayer(cluster);
-
-    // Si el zoom con rueda viene desactivado, se activa solo al enfocar el mapa.
-    if (!config.scrollWheelZoom) {
-      mapa.on('focus', () => mapa.scrollWheelZoom.enable());
-      mapa.on('blur',  () => mapa.scrollWheelZoom.disable());
-    }
   }
 
   // Devuelve los paisajes a marcar en el mapa según los filtros activos.
