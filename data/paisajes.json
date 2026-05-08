@@ -8,7 +8,10 @@
     "lugar_especifico_en": "Baños de la Marrana",
     "comunidad": "murcia",
     "municipio": "cartagena",
-    "coordenadas": [37.572883, -1.207950],
+    "coordenadas": [
+      37.572883,
+      -1.20795
+    ],
     "altitud_m": 5,
     "rumbo_grados": 86,
     "fecha": "2026-04-18",
@@ -58,7 +61,80 @@
     "version_protocolo": "1.0",
     "fecha_publicacion": "2026-05-01",
     "historial": [
-      { "fecha": "2026-05-01", "accion": "publicado", "version_protocolo": "1.0" }
+      {
+        "fecha": "2026-05-01",
+        "accion": "publicado",
+        "version_protocolo": "1.0"
+      }
+    ]
+  },
+  {
+    "id": "002",
+    "slug": "mayos1-alhama",
+    "titulo_es": "Plaza de las Américas",
+    "titulo_en": "Plaza de las Américas",
+    "lugar_especifico_es": "Plaza de las Américas",
+    "lugar_especifico_en": "Plaza de las Américas",
+    "comunidad": "murcia",
+    "municipio": "alhama-de-murcia",
+    "coordenadas": [
+      37.851667,
+      -1.4278
+    ],
+    "altitud_m": 152,
+    "rumbo_grados": 261,
+    "fecha": "2026-05-03",
+    "hora_inicio": "13:20",
+    "hora_fin": "13:50",
+    "duracion_publicada_seg": 711,
+    "tipo_paisaje": "urbano",
+    "estacion": "primavera",
+    "tipo_dia": "festivo",
+    "acontecimiento_es": "Fiesta de Los Mayos",
+    "acontecimiento_en": "Los Mayos festival",
+    "viento": "suave",
+    "nubosidad": "poco-nublado",
+    "precipitacion": "ninguna",
+    "temperatura_c": null,
+    "humedad_pct": null,
+    "luz_lux": 6451,
+    "campo_magnetico_ut": "42/44/1",
+    "satelites_fijo_visible": "15/22",
+    "error_horizontal_m": 9.8,
+    "equipo": {
+      "grabadora": "Tascam DR-60D MkII",
+      "microfonos": "t.bone SC 140 (par estéreo)",
+      "configuracion": "NOS — 90° entre ejes, 30 cm entre cápsulas",
+      "frecuencia_muestreo_khz": 44.1,
+      "bits": 16,
+      "modo": "estéreo",
+      "ecualizacion_es": "Realce suave de altas frecuencias para recuperar los agudos en un ambiente muy ruidoso (ganancia media en captura).",
+      "ecualizacion_en": "Gentle high-frequency lift to recover the highs in a very noisy environment (mid gain at capture).",
+      "edicion": "Tascam DP-32 SD"
+    },
+    "audio_url": "https://archive.org/download/PaisajeSonoro-002-Mayos1-Alhama/002-mayos1-alhama-mp3.mp3",
+    "audio_url_wav": "",
+    "imagen_url": "https://archive.org/download/PaisajeSonoro-002-Mayos1-Alhama/002-mayos1-alhama-webp.webp",
+    "internet_archive_url": "https://archive.org/details/PaisajeSonoro-002-Mayos1-Alhama",
+    "descripcion_es": "Mediodía festivo en el paseo de la Plaza de las Américas, en Alhama de Murcia. Lo dominante es el caminar de las personas que pasean y conversan, acompañado por el tililar continuo de los cascabeles. De fondo, eventos puntuales de la celebración de Los Mayos cruzan el jardín: castañuelas, una comparsa, voces que saludan. Pájaros en la Casa Amarilla y el rumor difuso del jardín completan el paisaje.",
+    "descripcion_en": "Festive midday on the promenade of Plaza de las Américas, in Alhama de Murcia. The dominant texture is the steady walk and conversation of strollers, accompanied by the continuous tinkling of bells. Brief moments of the Los Mayos celebration occasionally cross the garden: castanets, a comparsa, voices greeting one another. Birds at the Casa Amarilla and the diffuse murmur of the garden complete the soundscape.",
+    "sonidos_principales_es": "Conversaciones de personas paseando. Cascabeles.",
+    "sonidos_principales_en": "Conversations of strolling people. Bells.",
+    "sonidos_fondo_es": "Pájaros en la Casa Amarilla. Castañuelas. Comparsa. Tumulto indefinido proveniente del interior del jardín.",
+    "sonidos_fondo_en": "Birds at the Casa Amarilla. Castanets. Comparsa. Diffuse murmur from inside the garden.",
+    "incidencias_es": "Personas saludando.",
+    "incidencias_en": "People greeting.",
+    "notas_campo_es": "",
+    "notas_campo_en": "",
+    "estado": "publicado",
+    "version_protocolo": "1.1",
+    "fecha_publicacion": "2026-05-06",
+    "historial": [
+      {
+        "fecha": "2026-05-06",
+        "accion": "publicado",
+        "version_protocolo": "1.1"
+      }
     ]
   }
 ]
