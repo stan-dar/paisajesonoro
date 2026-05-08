@@ -136,5 +136,74 @@
         "version_protocolo": "1.1"
       }
     ]
+  },
+  {
+    "id": "003",
+    "slug": "mayos2-alhama",
+    "titulo_es": "Atrio de la Parroquia de la Concepción",
+    "titulo_en": "Atrio de la Parroquia de la Concepción",
+    "lugar_especifico_es": "Atrio de la Parroquia de la Concepción",
+    "lugar_especifico_en": "Atrio de la Parroquia de la Concepción",
+    "comunidad": "murcia",
+    "municipio": "alhama-de-murcia",
+    "coordenadas": [
+      37.852533,
+      -1.427967
+    ],
+    "altitud_m": 157,
+    "rumbo_grados": 198,
+    "fecha": "2026-05-03",
+    "hora_inicio": "19:00",
+    "hora_fin": "19:30",
+    "duracion_publicada_seg": 479,
+    "tipo_paisaje": "tradicion",
+    "estacion": "primavera",
+    "tipo_dia": "festivo",
+    "acontecimiento_es": "Encuentro de Cuadrillas (clausura de Los Mayos 2026)",
+    "acontecimiento_en": "Cuadrillas gathering (closing of Los Mayos 2026)",
+    "viento": "suave",
+    "nubosidad": "despejado",
+    "precipitacion": "ninguna",
+    "temperatura_c": null,
+    "humedad_pct": null,
+    "luz_lux": 13773,
+    "campo_magnetico_ut": "42/44/1",
+    "satelites_fijo_visible": "8/26",
+    "error_horizontal_m": 13.2,
+    "equipo": {
+      "grabadora": "Tascam DR-60D MkII",
+      "microfonos": "t.bone SC 140 (par estéreo)",
+      "configuracion": "NOS — 90° entre ejes, 30 cm entre cápsulas",
+      "frecuencia_muestreo_khz": 44.1,
+      "bits": 16,
+      "modo": "estéreo",
+      "ecualizacion_es": "Realce suave de altas frecuencias para recuperar los agudos en un ambiente de audio amplificado (ganancia media en captura).",
+      "ecualizacion_en": "Gentle high-frequency lift to recover the highs in an amplified-audio environment (mid gain at capture).",
+      "edicion": "Tascam DP-32 SD"
+    },
+    "audio_url": "https://archive.org/download/PaisajeSonoro-003-Mayos2-Alhama/003-mayos2-alhama-mp3.mp3",
+    "audio_url_wav": "",
+    "imagen_url": "https://archive.org/download/PaisajeSonoro-003-Mayos2-Alhama/003-mayos2-alhama-webp.webp",
+    "internet_archive_url": "https://archive.org/details/PaisajeSonoro-003-Mayos2-Alhama",
+    "descripcion_es": "Sobremesa-tarde festiva en el atrio de la Parroquia de la Concepción, en Alhama de Murcia, durante el Encuentro de Cuadrillas que clausura la Festividad de Los Mayos. La Cuadrilla de la Costera ocupa el escenario con su actuación; el público, sentado bajo el sol, acompaña con su presencia y aplausos. La grabación documenta el sonido de un acto colectivo singular, con audio amplificado, en un espacio urbano abierto.",
+    "descripcion_en": "Festive afternoon at the forecourt of La Concepción Parish Church, in Alhama de Murcia, during the Cuadrillas gathering that closes the Los Mayos festival. The Cuadrilla de la Costera takes the stage with its performance; the seated audience, beneath the sun, accompanies with presence and applause. The recording documents the sound of a singular collective event, with amplified audio, in an open urban space.",
+    "sonidos_principales_es": "Actuación musical de la Cuadrilla de la Costera.",
+    "sonidos_principales_en": "Musical performance by the Cuadrilla de la Costera.",
+    "sonidos_fondo_es": "Público.",
+    "sonidos_fondo_en": "Audience.",
+    "incidencias_es": "",
+    "incidencias_en": "",
+    "notas_campo_es": "Escenario con sistema de audio amplificado y espectadores sentados.",
+    "notas_campo_en": "Stage with amplified PA system and seated audience.",
+    "estado": "publicado",
+    "version_protocolo": "1.1",
+    "fecha_publicacion": "2026-05-06",
+    "historial": [
+      {
+        "fecha": "2026-05-06",
+        "accion": "publicado",
+        "version_protocolo": "1.1"
+      }
+    ]
   }
 ]
