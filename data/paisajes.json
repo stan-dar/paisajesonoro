@@ -205,5 +205,74 @@
         "version_protocolo": "1.1"
       }
     ]
+  },
+  {
+    "id": "004",
+    "slug": "rambla-salada-fortuna",
+    "titulo_es": "Ajauque y Rambla Salada",
+    "titulo_en": "Ajauque y Rambla Salada",
+    "lugar_especifico_es": "Ajauque y Rambla Salada",
+    "lugar_especifico_en": "Ajauque y Rambla Salada",
+    "comunidad": "murcia",
+    "municipio": "fortuna",
+    "coordenadas": [
+      38.123967,
+      -1.105267
+    ],
+    "altitud_m": 42.9,
+    "rumbo_grados": 28,
+    "fecha": "2026-05-09",
+    "hora_inicio": "19:30",
+    "hora_fin": "20:20",
+    "duracion_publicada_seg": 660,
+    "tipo_paisaje": "ribera",
+    "estacion": "primavera",
+    "tipo_dia": "fin-de-semana",
+    "acontecimiento_es": "Tarde de sábado",
+    "acontecimiento_en": "Saturday evening",
+    "viento": "moderado",
+    "nubosidad": "despejado",
+    "precipitacion": "ninguna",
+    "temperatura_c": null,
+    "humedad_pct": null,
+    "luz_lux": 11086,
+    "campo_magnetico_ut": "41/44/1",
+    "satelites_fijo_visible": "25/35",
+    "error_horizontal_m": 3.9,
+    "equipo": {
+      "grabadora": "Tascam DR-60D MkII",
+      "microfonos": "t.bone SC 140 (par estéreo)",
+      "configuracion": "NOS — 90° entre ejes, 30 cm entre cápsulas",
+      "frecuencia_muestreo_khz": 44.1,
+      "bits": 16,
+      "modo": "estéreo",
+      "ecualizacion_es": "Realce suave de altas frecuencias para recuperar los agudos por rachas de viento (ganancia media en captura).",
+      "ecualizacion_en": "Gentle high-frequency lift to recover the highs muted by wind gusts (mid gain at capture).",
+      "edicion": "Tascam DP-32 SD"
+    },
+    "audio_url": "https://archive.org/download/004-rambla-salada-fortuna/004-rambla-salada-fortuna-mp3.mp3",
+    "audio_url_wav": "",
+    "imagen_url": "https://archive.org/download/004-rambla-salada-fortuna/004-rambla-salada-fortuna-webp.webp",
+    "internet_archive_url": "https://archive.org/details/004-rambla-salada-fortuna",
+    "descripcion_es": "Atardecer de un sábado en el Paisaje Protegido del Humedal del Ajauque y Rambla Salada, Lugar de Interés Comunitario y Zona de Especial Protección para las Aves, en Fortuna. El paisaje se asienta sobre gledas —margas yesíferas grises depositadas hace unos 18 millones de años, cuando esta cuenca era fondo del Mediterráneo—, cuya erosión dibuja hoy un terreno de tierras malas y barrancos. Entre el matorral halófilo de tarayes y siemprevivas, las charcas hipersalinas tiñen el agua de rojo por la presencia de microorganismos halófilos: archaeas y la microalga Dunaliella salina, que producen pigmentos frente a la salinidad y el sol. Durante los primeros minutos de la grabación, un ejemplar de Cigüeñuela Común se sitúa varias veces sobre la vertical del trípode, a apenas metro y medio de los micrófonos, lanzando su reclamo agudo y repetido —kik-kik-kik— que domina toda la escena. Cuando se aleja, las rachas de viento mueven el matorral y, en la distancia, ecos sostenidos de disparos provenientes de un campo de tiro cercano cruzan el paisaje.",
+    "descripcion_en": "Saturday sunset at the Protected Landscape of the Ajauque and Rambla Salada Wetland, a Site of Community Importance and Special Protection Area for Birds, in Fortuna. The landscape rests on gleda — pale-grey gypsum-rich marls laid down some 18 million years ago, when this basin was the floor of the Mediterranean — whose erosion shapes today a terrain of badlands and gullies. Among the halophilic scrubland of tamarisks and sea-lavenders, the hypersaline ponds turn the water red through halophilic microorganisms: archaea and the microalga Dunaliella salina, which produce pigments to defend against salinity and sunlight. During the first minutes of the recording, a Common Stilt repeatedly positions itself directly above the tripod, barely a metre and a half from the microphones, uttering its sharp, repeated yelping call — kik-kik-kik — which dominates the entire scene. As it moves away, gusts of wind stir the scrub and, in the distance, sustained echoes of gunshots from a nearby shooting range cross the landscape.",
+    "sonidos_principales_es": "Cigüeñuela Común, disparos con eco provenientes de un campo de tiro cercano, viento en los arbustos.",
+    "sonidos_principales_en": "Common Stilt, echoing gunshots from a nearby shooting range, wind in the scrub.",
+    "sonidos_fondo_es": "Niños jugando, zumbido de moscardas, otros pájaros, tráfico aéreo, ladridos, tráfico rodado.",
+    "sonidos_fondo_en": "Children playing, large blowflies buzzing, other birds, air traffic, dogs barking, road traffic.",
+    "incidencias_es": "Rachas de viento y un ejemplar de Cigüeñuela Común sobrevolando la grabadora a 1,5 metros de altura.",
+    "incidencias_en": "Wind gusts and a Common Stilt flying over the recorder at 1.5 m height.",
+    "notas_campo_es": "No entramos a valorar la existencia de un campo de tiro en un paraje protegido.",
+    "notas_campo_en": "We do not enter into a value judgement on the existence of a shooting range within a protected landscape.",
+    "estado": "publicado",
+    "version_protocolo": "1.1",
+    "fecha_publicacion": "2026-05-13",
+    "historial": [
+      {
+        "fecha": "2026-05-13",
+        "accion": "publicado",
+        "version_protocolo": "1.1"
+      }
+    ]
   }
 ]
