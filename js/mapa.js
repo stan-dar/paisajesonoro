@@ -84,7 +84,7 @@
     return lista;
   }
 
-  function renderMarcadores() {
+  function renderMarcadores(ajustarVista) {
     if (!cluster) return;
     cluster.clearLayers();
     const lista = paisajesParaMapa();
@@ -97,6 +97,24 @@
       m.bindPopup(popupHTML(p));
       cluster.addLayer(m);
     });
+
+    if (ajustarVista) ajustarVistaAMarcadores(lista);
+  }
+
+  // Encuadra el mapa según los paisajes que se están mostrando, en vez de
+  // depender de un centro fijo. Así funciona igual de bien si los paisajes
+  // están todos en Murcia, repartidos por varias comunidades, o se filtra a
+  // un solo municipio. Las páginas de paisaje individual (con
+  // filtroPaisajeId) mantienen su zoom cercano fijo y no se reencuadran.
+  function ajustarVistaAMarcadores(lista) {
+    if (config.filtroPaisajeId) return;       // página de paisaje: zoom fijo
+    if (lista.length === 0) return;            // sin paisajes: mantiene config.center inicial
+    if (lista.length === 1) {
+      mapa.setView(lista[0].coordenadas, 13);
+      return;
+    }
+    const bounds = L.latLngBounds(lista.map(p => p.coordenadas));
+    mapa.fitBounds(bounds, { padding: [40, 40], maxZoom: 13 });
   }
 
   function popupHTML(p) {
@@ -142,7 +160,7 @@
     if (document.getElementById('tarjetas-grid')) window.PaisajeSonoro.renderTarjetas(config.filtroMunicipio);
     if (config.filtroMunicipio)                   window.PaisajeSonoro.renderMunicipioInfo(config.filtroMunicipio);
 
-    renderMarcadores();
+    renderMarcadores(true);
 
     // Aplica el idioma sobre el contenido recién inyectado.
     if (typeof window.setLang === 'function') {
@@ -152,8 +170,9 @@
     }
   });
 
-  // Cuando cambia el filtro o el idioma, re-renderiza marcadores
-  // (los tooltips se generan con el idioma activo y hay que reconstruirlos).
-  document.addEventListener('paisajes:actualizado', renderMarcadores);
-  document.addEventListener('lang:changed', renderMarcadores);
+  // Cuando cambia el filtro, re-renderiza Y reencuadra (el conjunto de
+  // paisajes visibles ha cambiado). Cuando solo cambia el idioma, se
+  // reconstruyen los tooltips pero la vista del mapa no debe saltar.
+  document.addEventListener('paisajes:actualizado', () => renderMarcadores(true));
+  document.addEventListener('lang:changed', () => renderMarcadores(false));
 })();
