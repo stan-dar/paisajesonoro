@@ -16,6 +16,10 @@ El proyecto se inscribe en la tradición inaugurada por R. Murray Schafer y el W
 - **Idiomas**: español e inglés (toda página, todo metadato)
 - **Contacto**: [contacto@PaisajeSonoro.org](mailto:contacto@paisajesonoro.org)
 
+### Cómo se mantiene este sitio
+
+Este repositorio (`Publicar/`) contiene **únicamente** lo que se sirve en `paisajesonoro.org`. Las páginas de `archivo/` se generan automáticamente a partir de `data/paisajes.json` y `data/municipios.json`; no se editan nunca a mano. Las herramientas que generan el sitio (scripts, plantillas, panel de administración) viven fuera de este repositorio, en la carpeta de trabajo local del proyecto.
+
 ### Stack tecnológico
 
 Sitio estático servido desde GitHub Pages. Mapas con Leaflet.js sobre OpenStreetMap (capa CartoDB Voyager). Tipografías Cormorant Garamond y Jost desde Google Fonts. Sin dependencias propietarias.
@@ -38,9 +42,9 @@ The project belongs to the tradition opened by R. Murray Schafer and the World S
 - **Languages**: Spanish and English (every page, every metadatum)
 - **Contact**: [contacto@PaisajeSonoro.org](mailto:contacto@paisajesonoro.org)
 
-### Repository structure
+### How this site is maintained
 
-See the tree above (in the Spanish section). File names and structure are identical for both languages.
+This repository (`Publicar/`) contains **only** what is served at `paisajesonoro.org`. Pages under `archivo/` are generated automatically from `data/paisajes.json` and `data/municipios.json`; they are never hand-edited. The tools that generate the site (scripts, templates, admin panel) live outside this repository, in the project's local working folder.
 
 ### Tech stack
 

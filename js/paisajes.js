@@ -5,17 +5,8 @@
 
 (function () {
 
-  /* === Detección del root del sitio ===
-     Construye URLs que funcionen tanto en local (servidor en raíz),
-     como en la URL provisional de GitHub Pages
-     (https://stan-dar.github.io/paisajesonoro/) y en la definitiva
-     (https://paisajesonoro.org/). */
-  const SITE_ROOT = (function () {
-    const path = window.location.pathname;
-    const idx = path.indexOf('/paisajesonoro/');
-    if (idx >= 0) return path.substring(0, idx + '/paisajesonoro/'.length);
-    return '/';
-  })();
+  // El sitio vive siempre en la raíz del dominio propio (paisajesonoro.org, ver CNAME).
+  const SITE_ROOT = '/';
 
   function urlPaisaje(p) {
     return SITE_ROOT + 'archivo/' + p.comunidad + '/' + p.municipio + '/' + p.id + '-' + p.slug + '.html';
