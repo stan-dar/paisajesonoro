@@ -201,6 +201,8 @@
         <div class="ficha-fila"><dt><span class="es">Rumbo</span><span class="en">Bearing</span></dt><dd id="f-rumbo"></dd></div>
         <div class="ficha-fila"><dt><span class="es">Municipio</span><span class="en">Municipality</span></dt><dd id="f-municipio"></dd></div>
         <div class="ficha-fila"><dt><span class="es">Comunidad</span><span class="en">Region</span></dt><dd id="f-comunidad"></dd></div>
+        <div class="ficha-fila"><dt><span class="es">Satélites GPS</span><span class="en">GPS satellites</span></dt><dd id="f-satelites"></dd></div>
+        <div class="ficha-fila"><dt><span class="es">Error horizontal</span><span class="en">Horizontal error</span></dt><dd id="f-error-h"></dd></div>
       </dl>
     </div>
 
@@ -232,10 +234,25 @@
         <div class="ficha-fila"><dt><span class="es">Precipitación</span><span class="en">Precipitation</span></dt><dd id="f-precipitacion"></dd></div>
         <div class="ficha-fila"><dt><span class="es">Temperatura</span><span class="en">Temperature</span></dt><dd id="f-temperatura"></dd></div>
         <div class="ficha-fila"><dt><span class="es">Humedad</span><span class="en">Humidity</span></dt><dd id="f-humedad"></dd></div>
+      </dl>
+    </div>
+
+    <!-- Mediciones de instrumento. Cada paisaje muestra solo las que se
+         hicieron en su época: los primeros paisajes se documentaron con la
+         app del móvil (luz, campo magnético con declinación); a partir de
+         2026 se usan medidores dedicados (EF / MF / RF / radiación). -->
+    <div class="ficha-grupo" id="grupo-mediciones">
+      <h2>
+        <span class="es">Mediciones del entorno</span>
+        <span class="en">Environmental measurements</span>
+      </h2>
+      <dl class="ficha-grid">
+        <div class="ficha-fila"><dt><span class="es">Campo eléctrico EF (pico)</span><span class="en">Electric field EF (peak)</span></dt><dd id="f-campo-electrico"></dd></div>
+        <div class="ficha-fila"><dt><span class="es">Campo magnético MF (pico)</span><span class="en">Magnetic field MF (peak)</span></dt><dd id="f-campo-magnetico-mf"></dd></div>
+        <div class="ficha-fila"><dt><span class="es">Radiofrecuencia RF (pico)</span><span class="en">Radio frequency RF (peak)</span></dt><dd id="f-radiofrecuencia"></dd></div>
+        <div class="ficha-fila"><dt><span class="es">Radiación ionizante</span><span class="en">Ionising radiation</span></dt><dd id="f-radiacion"></dd></div>
         <div class="ficha-fila"><dt><span class="es">Luz ambiente</span><span class="en">Ambient light</span></dt><dd id="f-luz"></dd></div>
-        <div class="ficha-fila"><dt><span class="es">Campo magnético</span><span class="en">Magnetic field</span></dt><dd id="f-magnetico"></dd></div>
-        <div class="ficha-fila"><dt><span class="es">Satélites GPS</span><span class="en">GPS satellites</span></dt><dd id="f-satelites"></dd></div>
-        <div class="ficha-fila"><dt><span class="es">Error horizontal</span><span class="en">Horizontal error</span></dt><dd id="f-error-h"></dd></div>
+        <div class="ficha-fila"><dt><span class="es">Campo magnético (app GPS)</span><span class="en">Magnetic field (GPS app)</span></dt><dd id="f-magnetico"></dd></div>
       </dl>
     </div>
 

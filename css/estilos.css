@@ -1578,6 +1578,15 @@ footer {
   border-bottom: 1px dotted var(--niebla);
 }
 
+/* Las filas y grupos que no aplican a un paisaje concreto se ocultan con el
+   atributo [hidden] desde paisaje.js. Hay que declararlo aquí porque el
+   display:flex/grid de arriba gana al display:none que el navegador aplica
+   por defecto a [hidden]. */
+.ficha-fila[hidden],
+.ficha-grupo[hidden] {
+  display: none;
+}
+
 .ficha-fila dt {
   font-size: .58rem;
   letter-spacing: .2em;

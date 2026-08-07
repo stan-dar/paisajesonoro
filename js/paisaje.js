@@ -74,6 +74,35 @@
     if (el) el.setAttribute(attr, valor);
   }
 
+  /* Rellena una fila de la ficha técnica que puede no aplicar a este paisaje.
+     El archivo ha ido cambiando de instrumentos con los años, así que cada
+     paisaje enseña solo lo que de verdad se midió en su época:
+
+       - la clave NO existe en el JSON  -> ese dato no se documentaba cuando
+         se grabó (p. ej. los primeros paisajes no llevan radiofrecuencia):
+         la fila desaparece de la ficha.
+       - la clave existe pero está vacía -> sí tocaba medirlo y no se pudo:
+         la fila se muestra con "—", que también es información.           */
+  function setOpcional(id, paisaje, clave, sufijo) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    if (!(clave in paisaje)) {
+      const fila = el.closest('.ficha-fila');
+      if (fila) fila.hidden = true;
+      return;
+    }
+    el.textContent = fmt(paisaje[clave], sufijo);
+  }
+
+  // Oculta un grupo de la ficha si todas sus filas han quedado ocultas,
+  // para no dejar un título suelto sin nada debajo.
+  function ocultarGrupoSiVacio(idGrupo) {
+    const grupo = document.getElementById(idGrupo);
+    if (!grupo) return;
+    const visibles = grupo.querySelectorAll('.ficha-fila:not([hidden])');
+    if (visibles.length === 0) grupo.hidden = true;
+  }
+
   function tipoNombre(slug, lang) {
     const t = (window.PaisajeSonoro.TIPOS_PAISAJE || []).find(x => x.id === slug);
     if (!t) return slug;
@@ -197,12 +226,21 @@
     set('f-viento', cap(p.viento));
     set('f-nubosidad', cap(p.nubosidad));
     set('f-precipitacion', cap(p.precipitacion));
-    set('f-temperatura', p.temperatura_c !== null ? `${p.temperatura_c} °C` : '—');
-    set('f-humedad', p.humedad_pct !== null ? `${p.humedad_pct} %` : '—');
-    set('f-luz', fmt(p.luz_lux, 'lux'));
-    set('f-magnetico', fmt(p.campo_magnetico_ut, 'µT'));
-    set('f-satelites', p.satelites_fijo_visible || '—');
-    set('f-error-h', fmt(p.error_horizontal_m, 'm'));
+    setOpcional('f-temperatura', p, 'temperatura_c', '°C');
+    setOpcional('f-humedad', p, 'humedad_pct', '%');
+
+    // Calidad del fijo GPS (solo en los paisajes que la registraron).
+    setOpcional('f-satelites', p, 'satelites_fijo_visible');
+    setOpcional('f-error-h', p, 'error_horizontal_m', 'm');
+
+    // Ficha técnica — Mediciones del entorno
+    setOpcional('f-campo-electrico', p, 'campo_electrico_ef_vm', 'V/m');
+    setOpcional('f-campo-magnetico-mf', p, 'campo_magnetico_mf_ut', 'µT');
+    setOpcional('f-radiofrecuencia', p, 'radiofrecuencia_rf_mwm2', 'mW/m²');
+    setOpcional('f-radiacion', p, 'radiacion_ionizante_usvh', 'µSv/h');
+    setOpcional('f-luz', p, 'luz_lux', 'lux');
+    setOpcional('f-magnetico', p, 'campo_magnetico_ut', 'µT');
+    ocultarGrupoSiVacio('grupo-mediciones');
 
     // Ficha técnica — Equipo
     if (p.equipo) {
