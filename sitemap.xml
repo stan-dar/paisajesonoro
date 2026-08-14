@@ -24,7 +24,7 @@
 
   <url>
     <loc>https://paisajesonoro.org/archivo/murcia/alhama-de-murcia.html</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://paisajesonoro.org/archivo/murcia/alhama-de-murcia.html"/>
@@ -34,7 +34,7 @@
 
   <url>
     <loc>https://paisajesonoro.org/archivo/murcia/alhama-de-murcia/002-mayos1-alhama.html</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://paisajesonoro.org/archivo/murcia/alhama-de-murcia/002-mayos1-alhama.html"/>
@@ -44,7 +44,7 @@
 
   <url>
     <loc>https://paisajesonoro.org/archivo/murcia/alhama-de-murcia/003-mayos2-alhama.html</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://paisajesonoro.org/archivo/murcia/alhama-de-murcia/003-mayos2-alhama.html"/>
@@ -54,7 +54,7 @@
 
   <url>
     <loc>https://paisajesonoro.org/archivo/murcia/cartagena.html</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://paisajesonoro.org/archivo/murcia/cartagena.html"/>
@@ -64,7 +64,7 @@
 
   <url>
     <loc>https://paisajesonoro.org/archivo/murcia/cartagena/001-isla-plana.html</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://paisajesonoro.org/archivo/murcia/cartagena/001-isla-plana.html"/>
@@ -74,7 +74,7 @@
 
   <url>
     <loc>https://paisajesonoro.org/archivo/murcia/fortuna.html</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://paisajesonoro.org/archivo/murcia/fortuna.html"/>
@@ -84,12 +84,32 @@
 
   <url>
     <loc>https://paisajesonoro.org/archivo/murcia/fortuna/004-rambla-salada-fortuna.html</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://paisajesonoro.org/archivo/murcia/fortuna/004-rambla-salada-fortuna.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://paisajesonoro.org/archivo/murcia/fortuna/004-rambla-salada-fortuna.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://paisajesonoro.org/archivo/murcia/fortuna/004-rambla-salada-fortuna.html"/>
+  </url>
+
+  <url>
+    <loc>https://paisajesonoro.org/archivo/murcia/mazarron.html</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://paisajesonoro.org/archivo/murcia/mazarron.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://paisajesonoro.org/archivo/murcia/mazarron.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://paisajesonoro.org/archivo/murcia/mazarron.html"/>
+  </url>
+
+  <url>
+    <loc>https://paisajesonoro.org/archivo/murcia/mazarron/005-playa-del-rihuete.html</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://paisajesonoro.org/archivo/murcia/mazarron/005-playa-del-rihuete.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://paisajesonoro.org/archivo/murcia/mazarron/005-playa-del-rihuete.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://paisajesonoro.org/archivo/murcia/mazarron/005-playa-del-rihuete.html"/>
   </url>
 
 </urlset>

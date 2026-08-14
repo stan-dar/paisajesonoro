@@ -43,5 +43,20 @@
     "descripcion_en": "Fortuna is a municipality in the northeast of the Region of Murcia, in the Abanilla-Fortuna valley, known for its mineral-medicinal thermal spa active since Roman times. Its municipal area includes the Protected Landscape of the Ajauque and Rambla Salada Wetland, a system of hypersaline ramblas declared a Site of Community Importance and Special Protection Area for Birds, with salt flats, red-tinted ponds coloured by halophilic microorganisms, and a characteristic landscape of gleda marls and Miocene badlands.",
     "wikipedia_url_es": "https://es.wikipedia.org/wiki/Fortuna_(Murcia)",
     "wikipedia_url_en": "https://en.wikipedia.org/wiki/Fortuna,_Spain"
+  },
+  "mazarron": {
+    "comunidad": "murcia",
+    "comunidad_nombre_es": "Región de Murcia",
+    "comunidad_nombre_en": "Region of Murcia",
+    "nombre_es": "Mazarrón",
+    "nombre_en": "Mazarrón",
+    "coordenadas_centro": [
+      37.59838,
+      -1.313902
+    ],
+    "descripcion_es": "Mazarrón es una localidad y municipio español, perteneciente a la Región de Murcia, situado en el sureste de España, en la comarca natural del Bajo Guadalentín. Tiene una extensión de 318,7 km² y una población de 35 449 habitantes (INE 2025) que se distribuyen entre el núcleo de Mazarrón, donde viven aproximadamente 13 000 habitantes, y el Puerto de Mazarrón con 11 000. El resto se reparte entre sus distintas pedanías.\n\nEn el Puerto de Mazarrón se localizan dos barcos fenicios (concretamente, en la playa de la Isla), que fueron encontrados por casualidad durante la construcción de un puerto náutico que provocó el cambio de las corrientes marinas de la playa. En Punta de los Gavilanes se encuentra un conjunto arqueológico que se localiza en un promontorio situado entre las playas de Bahía y de La Pava. Contiene restos que van desde la primera mitad del II milenio antes de Cristo, con evidencias de la cultura del Argar, hasta el siglo III a. C., de clara influencia fenicia.",
+    "descripcion_en": "Mazarrón is a municipality in the autonomous community and province of Murcia, southeastern Spain. The municipality has an area of 318.7 square kilometres (123.1 mi2), and had a population of 31,562 inhabitants in 2019. A military fortification built in the 1930s is a tourist attraction, and is located on the old road between Mazarrón and Cartagena, just outside the municipality.\n\nIn the Port of Mazarrón, two Phoenician ships were found (specifically on Isla Beach), discovered by chance during the construction of a marina, which altered the beach's marine currents. At Punta de los Gavilanes, an archaeological site is located on a promontory between Bahía and La Pava beaches. It contains remains dating from the first half of the 2nd millennium BC, with evidence of the Argar culture, to the 3rd century BC, showing clear Phoenician influence.",
+    "wikipedia_url_es": "https://es.wikipedia.org/wiki/Mazarr%C3%B3n",
+    "wikipedia_url_en": "https://en.wikipedia.org/wiki/Mazarr%C3%B3n"
   }
 }

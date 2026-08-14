@@ -274,5 +274,74 @@
         "version_protocolo": "1.1"
       }
     ]
+  },
+  {
+    "id": "005",
+    "slug": "playa-del-rihuete",
+    "titulo_es": "Playa del Rihuete",
+    "titulo_en": "Playa del Rihuete",
+    "lugar_especifico_es": "Paseo del Rihuete, Puerto de Mazarrón",
+    "lugar_especifico_en": "Paseo Rihuete, Puerto de Mazarrón",
+    "comunidad": "murcia",
+    "municipio": "mazarron",
+    "coordenadas": [
+      37.57165,
+      -1.2528
+    ],
+    "altitud_m": 13.2,
+    "rumbo_grados": 159,
+    "fecha": "2026-08-09",
+    "hora_inicio": "16:30",
+    "hora_fin": "17:45",
+    "duracion_publicada_seg": 864,
+    "tipo_paisaje": "costero",
+    "estacion": "verano",
+    "tipo_dia": "fin-de-semana",
+    "acontecimiento_es": "Domingo",
+    "acontecimiento_en": "Sunday",
+    "viento": "suave",
+    "nubosidad": "despejado",
+    "precipitacion": "ninguna",
+    "temperatura_c": 32.2,
+    "humedad_pct": 75.5,
+    "campo_electrico_ef_vm": 0,
+    "campo_magnetico_mf_ut": 0.07,
+    "radiofrecuencia_rf_mwm2": 0.04,
+    "radiacion_ionizante_usvh": 0.25,
+    "equipo": {
+      "grabadora": "Tascam DR-60D MkII",
+      "microfonos": "t.bone SC 140 (par estéreo)",
+      "configuracion": "NOS — 90° entre ejes, 30 cm entre cápsulas",
+      "frecuencia_muestreo_khz": 44.1,
+      "bits": 16,
+      "modo": "estéreo",
+      "ecualizacion_es": "Realce suave de altas frecuencias para recuperar los agudos por excesiva humedad (ganancia media en captura).",
+      "ecualizacion_en": "Soothing high-frequency boost to recover sharpness from excessive humidity (average gain in capture).",
+      "edicion": "Tascam DP-32 SD"
+    },
+    "audio_url": "https://archive.org/download/Rihuete/SONG_0005.mp3",
+    "audio_url_wav": "",
+    "imagen_url": "https://archive.org/download/Rihuete/PXL_20260809_144628381.PANO.webp",
+    "internet_archive_url": "https://archive.org/details/Rihuete",
+    "descripcion_es": "A la hora del café, muchas personas continúan su rutina de verano y vacaciones, en los chiringuitos cercanos, el ajetreo del aparcamiento y la propia playa.  A pesar del calor y la humedad, el bullicio convierte una escena tranquila y soleada, con el rumor del mar y el canto de los pájaros, en una tormenta de ruidos azarosos.\n\nEl resultado es una suerte de sonido blanco, donde apenas se distinguen las olas del mar, devoradas por los ruidos de motores de embarcaciones de recreo, motos acuáticas y tráfico.",
+    "descripcion_en": "At coffee time, many people continue their summer routine and vacations at nearby kiosks, the hustle of the parking lot, and the sound of the beach itself. Despite the heat and humidity, the hustle turns a tranquil and sunny scene into a cacophony of random noises, with the sound of the sea and the song of birds.\n\nThe result is a kind of white noise, where the waves of the sea barely distinguish themselves, devoured by the sounds of recreational boat engines, watercraft, and traffic.",
+    "sonidos_principales_es": "Barcos de recreo con su zumbido constante, pájaros, olas, tráfico rodado, niños en la playa, ",
+    "sonidos_principales_en": "Recreational boats with their constant buzzing, birds, waves, road traffic, children on the beach,",
+    "sonidos_fondo_es": "Niño llorando con gaviota de patas amarillas, ruido de vecinos, chiringuito cercano, motos de agua",
+    "sonidos_fondo_en": "A crying child with a yellow-legged seagull, neighbors' noise, nearby kiosk, jet skis",
+    "incidencias_es": "",
+    "incidencias_en": "",
+    "notas_campo_es": "",
+    "notas_campo_en": "",
+    "estado": "publicado",
+    "version_protocolo": "1.1",
+    "fecha_publicacion": "",
+    "historial": [
+      {
+        "fecha": "2026-08-14",
+        "accion": "publicado",
+        "version_protocolo": "1.1"
+      }
+    ]
   }
 ]

@@ -115,6 +115,14 @@
     return s.charAt(0).toUpperCase() + s.slice(1);
   }
 
+  /* Los campos de lista cerrada se guardan en el JSON como identificadores con
+     guion ("poco-nublado", "fin-de-semana") y se muestran como texto normal
+     ("Poco nublado", "Fin de semana"). */
+  function etiqueta(valor) {
+    if (!valor) return '—';
+    return cap(String(valor).replace(/-/g, ' '));
+  }
+
   // Re-aplica el idioma sobre el HTML inyectado.
   function reaplicarIdioma() {
     if (typeof window.setLang !== 'function') return;
@@ -215,17 +223,17 @@
     set('f-hora-inicio', p.hora_inicio || '—');
     set('f-hora-fin', p.hora_fin || '—');
     set('f-duracion', fmtDuracion(p.duracion_publicada_seg));
-    setHtml('f-estacion', `<span class="es">${cap(p.estacion)}</span><span class="en">${cap(p.estacion)}</span>`);
-    setHtml('f-tipo-dia', `<span class="es">${cap((p.tipo_dia || '').replace(/-/g, ' '))}</span><span class="en">${cap((p.tipo_dia || '').replace(/-/g, ' '))}</span>`);
+    setHtml('f-estacion', `<span class="es">${etiqueta(p.estacion)}</span><span class="en">${etiqueta(p.estacion)}</span>`);
+    setHtml('f-tipo-dia', `<span class="es">${etiqueta(p.tipo_dia)}</span><span class="en">${etiqueta(p.tipo_dia)}</span>`);
     if (p.acontecimiento_es || p.acontecimiento_en) {
       setHtml('f-acontecimiento', `<span class="es">${p.acontecimiento_es || '—'}</span><span class="en">${p.acontecimiento_en || '—'}</span>`);
     }
 
     // Ficha técnica — Condiciones
     setHtml('f-tipo', `<span class="es">${tipoNombre(p.tipo_paisaje, 'es')}</span><span class="en">${tipoNombre(p.tipo_paisaje, 'en')}</span>`);
-    set('f-viento', cap(p.viento));
-    set('f-nubosidad', cap(p.nubosidad));
-    set('f-precipitacion', cap(p.precipitacion));
+    set('f-viento', etiqueta(p.viento));
+    set('f-nubosidad', etiqueta(p.nubosidad));
+    set('f-precipitacion', etiqueta(p.precipitacion));
     setOpcional('f-temperatura', p, 'temperatura_c', '°C');
     setOpcional('f-humedad', p, 'humedad_pct', '%');
 
