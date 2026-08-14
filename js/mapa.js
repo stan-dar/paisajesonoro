@@ -107,8 +107,21 @@
   // un solo municipio. Las páginas de paisaje individual (con
   // filtroPaisajeId) mantienen su zoom cercano fijo y no se reencuadran.
   function ajustarVistaAMarcadores(lista) {
-    if (config.filtroPaisajeId) return;       // página de paisaje: zoom fijo
     if (lista.length === 0) return;            // sin paisajes: mantiene config.center inicial
+
+    // Leaflet guarda el tamaño del contenedor al crear el mapa, y en esa
+    // primera pasada la maquetación puede no estar cuadrada todavía: se
+    // quedaba con ancho 0. Con un ancho 0 el agrupador descarta TODOS los
+    // marcadores y el mapa aparecía vacío. Esto hay que hacerlo en CUALQUIER
+    // página con mapa, también en la de un paisaje suelto, así que va antes
+    // de decidir si además hay que reencuadrar.
+    mapa.invalidateSize();
+    if (mapa.getSize().x === 0) {
+      setTimeout(() => ajustarVistaAMarcadores(lista), 150);
+      return;
+    }
+
+    if (config.filtroPaisajeId) return;       // página de paisaje: centro y zoom fijos
     if (lista.length === 1) {
       mapa.setView(lista[0].coordenadas, 13);
       return;
@@ -168,6 +181,12 @@
       try { saved = localStorage.getItem('paisajesonoro-lang') || 'es'; } catch (e) {}
       window.setLang(saved);
     }
+  });
+
+  // Cuando la página acaba de cargar del todo (fuentes e imágenes incluidas)
+  // el contenedor ya tiene su tamaño definitivo: se remide por si acaso.
+  window.addEventListener('load', () => {
+    if (mapa) mapa.invalidateSize();
   });
 
   // Cuando cambia el filtro, re-renderiza Y reencuadra (el conjunto de

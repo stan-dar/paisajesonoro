@@ -123,6 +123,19 @@
     return cap(String(valor).replace(/-/g, ' '));
   }
 
+  /* El rumbo se guarda solo en grados, pero la ficha de campo lo anota con su
+     orientación ("159º S-SE"), así que se muestran los dos: la orientación se
+     deduce de los grados sobre los 16 rumbos de la rosa. */
+  const ROSA_16 = ['N', 'N-NE', 'NE', 'E-NE', 'E', 'E-SE', 'SE', 'S-SE',
+                   'S', 'S-SO', 'SO', 'O-SO', 'O', 'O-NO', 'NO', 'N-NO'];
+
+  function fmtRumbo(grados) {
+    if (grados === null || grados === undefined || grados === '') return '—';
+    const g = ((Number(grados) % 360) + 360) % 360;
+    if (isNaN(g)) return '—';
+    return `${grados}° (${ROSA_16[Math.round(g / 22.5) % 16]})`;
+  }
+
   // Re-aplica el idioma sobre el HTML inyectado.
   function reaplicarIdioma() {
     if (typeof window.setLang !== 'function') return;
@@ -214,7 +227,7 @@
     // Ficha técnica — Localización
     set('f-coord', fmtCoord(p.coordenadas));
     set('f-altitud', fmt(p.altitud_m, 'm'));
-    set('f-rumbo', fmt(p.rumbo_grados, '°'));
+    set('f-rumbo', fmtRumbo(p.rumbo_grados));
     set('f-municipio', mun ? mun.nombre_es : p.municipio);
     setHtml('f-comunidad', `<span class="es">${mun ? mun.comunidad_nombre_es : ''}</span><span class="en">${mun ? mun.comunidad_nombre_en : ''}</span>`);
 
