@@ -343,5 +343,74 @@
         "version_protocolo": "1.1"
       }
     ]
+  },
+  {
+    "id": "006",
+    "slug": "eclipse-solar-2026",
+    "titulo_es": "Eclipse Solar 2026",
+    "titulo_en": "Solar Eclipse 2026",
+    "lugar_especifico_es": "Ermita de Isla Plana",
+    "lugar_especifico_en": "Hermitage of Isla Plana",
+    "comunidad": "murcia",
+    "municipio": "cartagena",
+    "coordenadas": [
+      37.573067,
+      -1.209233
+    ],
+    "altitud_m": 7.4,
+    "rumbo_grados": 322,
+    "fecha": "2026-08-12",
+    "hora_inicio": "20:05",
+    "hora_fin": "21:00",
+    "duracion_publicada_seg": 734,
+    "tipo_paisaje": "costero",
+    "estacion": "verano",
+    "tipo_dia": "laborable",
+    "acontecimiento_es": "Eclipse Solar Agosto 2026",
+    "acontecimiento_en": "Solar Eclipse August 2026",
+    "viento": "calma",
+    "nubosidad": "poco-nublado",
+    "precipitacion": "ninguna",
+    "temperatura_c": 31.3,
+    "humedad_pct": 84.2,
+    "campo_electrico_ef_vm": 0.15,
+    "campo_magnetico_mf_ut": 0.16,
+    "radiofrecuencia_rf_mwm2": 0.313,
+    "radiacion_ionizante_usvh": 0.28,
+    "equipo": {
+      "grabadora": "Tascam DR-60D MkII",
+      "microfonos": "t.bone SC 140 (par estéreo)",
+      "configuracion": "NOS — 90° entre ejes, 30 cm entre cápsulas",
+      "frecuencia_muestreo_khz": 44.1,
+      "bits": 16,
+      "modo": "estéreo",
+      "ecualizacion_es": "Realce de Agudos",
+      "ecualizacion_en": "High-pitched",
+      "edicion": "Audacity"
+    },
+    "audio_url": "https://archive.org/download/006-eclipse-mp-3/006_Eclipse_mp3.mp3",
+    "audio_url_wav": "",
+    "imagen_url": "https://archive.org/download/006-eclipse-mp-3/006_Eclipse_Foto.webp",
+    "internet_archive_url": "https://archive.org/details/006-eclipse-mp-3",
+    "descripcion_es": "En la Plaza de la Ermita de Isla Plana, se congregó una pequeña multitud para contemplar el evento. Niños y mayores aprovecharon la tarde de verano para instalarse junto al mar. Algunas personas nos preguntaban con curiosidad por las grabaciones.",
+    "descripcion_en": "At the Plaza de la Ermita de Isla Plana, a small crowd gathered to watch the event. Children and the elderly took advantage of the summer afternoon to sit by the sea. Some people asked us curiously about the recordings.",
+    "sonidos_principales_es": "Personas hablando, niños jugando",
+    "sonidos_principales_en": "People talking, children playing",
+    "sonidos_fondo_es": "Murmullo y motores de embarcaciones de recreo",
+    "sonidos_fondo_en": "Whispers and motors of recreational boats",
+    "incidencias_es": "",
+    "incidencias_en": "",
+    "notas_campo_es": "",
+    "notas_campo_en": "",
+    "estado": "publicado",
+    "version_protocolo": "1.1",
+    "fecha_publicacion": "2026-08-22",
+    "historial": [
+      {
+        "fecha": "2026-08-22",
+        "accion": "publicado",
+        "version_protocolo": "1.1"
+      }
+    ]
   }
 ]

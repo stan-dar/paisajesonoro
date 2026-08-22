@@ -268,8 +268,10 @@
 
     const wikiEs = document.getElementById('municipio-wiki-es');
     const wikiEn = document.getElementById('municipio-wiki-en');
+    // Los dos enlaces apuntan al artículo español: es la fuente real también
+    // del texto inglés, que es una traducción suya.
     if (wikiEs) wikiEs.href = mun.wikipedia_url_es;
-    if (wikiEn) wikiEn.href = mun.wikipedia_url_en;
+    if (wikiEn) wikiEn.href = mun.wikipedia_url_es;
 
     document.title = `${mun.nombre_es} · Paisaje Sonoro`;
   }
