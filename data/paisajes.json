@@ -412,5 +412,74 @@
         "version_protocolo": "1.1"
       }
     ]
+  },
+  {
+    "id": "007",
+    "slug": "fuente-del-hilo",
+    "titulo_es": "Fuente del Hilo",
+    "titulo_en": "Fuente del Hilo",
+    "lugar_especifico_es": "Fuente del Hilo, Sierra Espuña, Alhama de Murcia",
+    "lugar_especifico_en": "Fuente del Hilo, Sierra Espuña, Alhama de Murcia",
+    "comunidad": "murcia",
+    "municipio": "alhama-de-murcia",
+    "coordenadas": [
+      37.85785,
+      -1.522367
+    ],
+    "altitud_m": 784,
+    "rumbo_grados": 216,
+    "fecha": "2026-08-28",
+    "hora_inicio": "18:45",
+    "hora_fin": "21:15",
+    "duracion_publicada_seg": 816,
+    "tipo_paisaje": "sierra-monte",
+    "estacion": "verano",
+    "tipo_dia": "laborable",
+    "acontecimiento_es": "",
+    "acontecimiento_en": "",
+    "viento": "suave",
+    "nubosidad": "despejado",
+    "precipitacion": "ninguna",
+    "temperatura_c": 23.1,
+    "humedad_pct": 54.4,
+    "campo_electrico_ef_vm": 0,
+    "campo_magnetico_mf_ut": 0.12,
+    "radiofrecuencia_rf_mwm2": 0.006,
+    "radiacion_ionizante_usvh": 0.18,
+    "equipo": {
+      "grabadora": "Tascam DR-60D MkII",
+      "microfonos": "t.bone SC 140 (par estéreo)",
+      "configuracion": "NOS — 90° entre ejes, 30 cm entre cápsulas",
+      "frecuencia_muestreo_khz": 48,
+      "bits": 24,
+      "modo": "estéreo",
+      "ecualizacion_es": "Control de Graves",
+      "ecualizacion_en": "Grave Control",
+      "edicion": "Audacity"
+    },
+    "audio_url": "https://archive.org/download/007-fuente-del-hilo/007_Fuente%20del%20Hilo.mp3",
+    "audio_url_wav": "",
+    "imagen_url": "https://archive.org/download/007-fuente-del-hilo/007_Fuente%20del%20Hilo.webp",
+    "internet_archive_url": "https://archive.org/details/007-fuente-del-hilo",
+    "descripcion_es": "Fuente del Hilo, Sierra Espuña, Alhama de Murcia.  Murcia\n\nSierra Espuña fue declarado Parque Regional en 1992 bajo la Ley de Ordenación y Protección del Territorio de la Región de Murcia. \nEs Zona de Especial Conservación, Zona de Especial Protección para las Aves y Reserva Regional de Caza.\n\nUn pequeño hilo de agua brotaba de una fuente, hacia una antiguo acueducto que traía agua de cotas más altas.\n\nEl sonidos del manantial, junto al restaurante (cerrado por vacaciones) se fundía con voces lejanas y pisadas de Senderistas.  \n\nCon el pasar de las hora aparecieron algunas aves, Arrendajos y Piquituerto y anocheciendo comenzamos a escuchar sonidos de Murciélagos, Mochuelos y Búhos.\n\nTambién se escucha el tráfico aéreo de la zona.\n\nComo anécdota, un zorro salvaje vino a visitarnos durante la grabación, a curiosear sobre lo que estábamos haciendo.",
+    "descripcion_en": "Fuente del Hilo, Sierra Espuña, Alhama de Murcia.  Murcia\n\nSierra Espuña was declared a Regional Park in 1992 under the Law for the Regulation and Protection of the Territory of the Region of Murcia. \n\nIt is a Special Conservation Area, a Special Protection Area for Birds, and a Regional Hunting Reserve.\n\nA small stream of water emerged from a spring, towards an old aqueduct that brought water from higher elevations.\n\nThe sounds of the spring, along with the restaurant (closed for holidays), blended with distant voices and the footsteps of hikers.\n\nAs the hours passed, some birds appeared, Chiffchaffs and Woodcocks, and at dusk we began to hear sounds of Bats, Owls, and Owls.\n\nThe aerial traffic in the area is also heard.\n\nAs an anecdote, a wild fox came to visit us during the recording, curiously looking at what we were doing.",
+    "sonidos_principales_es": "Agua del Manantial, pájaros, pisadas y voces",
+    "sonidos_principales_en": "Water from the Manantial, birds, footsteps, and voices",
+    "sonidos_fondo_es": "Aves diurnas y nocturnas, moscardones, murciélagos",
+    "sonidos_fondo_en": "Diurnal and nocturnal birds, mosquitoes, bats",
+    "incidencias_es": "Un zorro salvaje vino a visitarnos.",
+    "incidencias_en": "A wild fox came to visit us.",
+    "notas_campo_es": "",
+    "notas_campo_en": "",
+    "estado": "publicado",
+    "version_protocolo": "1.1",
+    "fecha_publicacion": "",
+    "historial": [
+      {
+        "fecha": "2026-08-30",
+        "accion": "publicado",
+        "version_protocolo": "1.1"
+      }
+    ]
   }
 ]
