@@ -35,8 +35,15 @@
       }
     }).setView(config.center, config.zoom);
 
+    // Clave de CARTO para los basemaps raster: sin ella los tiles vienen con
+    // marca de agua. Queda a la vista porque la web es estática y se sirve
+    // desde GitHub Pages; es lo normal en las claves de basemap. Gratis hasta
+    // 5.000.000 de tiles al mes. Ya no se usa el subdominio {s}: la
+    // documentación actual de CARTO lo sirve todo desde basemaps.cartocdn.com.
+    const CLAVE_CARTO = 'cb1_2kdl_1_b85f100edaf2609c102aef38';
+
     const voyager = L.tileLayer(
-      'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
+      'https://basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=' + CLAVE_CARTO,
       {
         maxZoom: 19,
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
