@@ -612,6 +612,27 @@ footer {
   border-bottom-color: var(--arena);
 }
 
+/* Canal de YouTube: mismo aspecto que la línea de contacto, justo debajo. */
+.f-youtube {
+  font-size: .88rem;
+  color: var(--arena-claro);
+  letter-spacing: .03em;
+  line-height: 1.7;
+}
+
+.f-youtube a {
+  color: var(--blanco);
+  text-decoration: none;
+  border-bottom: 1px solid var(--musgo-claro);
+  padding-bottom: 1px;
+  transition: color .3s, border-color .3s;
+}
+
+.f-youtube a:hover {
+  color: var(--arena);
+  border-bottom-color: var(--arena);
+}
+
 .f-info {
   font-size: .88rem;
   color: var(--niebla);
@@ -1413,6 +1434,28 @@ footer {
   color: var(--niebla);
   margin: .25rem 0 0;
   letter-spacing: .02em;
+}
+
+/* Enlace a la versión extendida en vídeo, bajo el reproductor. Va sobre el
+   fondo oscuro de la sección de audio, como la nota de los auriculares, pero
+   sin cursiva: es una acción, no una aclaración. */
+.paisaje-video {
+  margin: .9rem 0 0;
+  font-size: .85rem;
+  letter-spacing: .02em;
+}
+
+.paisaje-video a {
+  color: var(--arena-claro);
+  text-decoration: none;
+  border-bottom: 1px solid var(--musgo-claro);
+  padding-bottom: 2px;
+  transition: color .3s, border-color .3s;
+}
+
+.paisaje-video a:hover {
+  color: var(--blanco);
+  border-bottom-color: var(--arena);
 }
 
 .paisaje-audio-error {

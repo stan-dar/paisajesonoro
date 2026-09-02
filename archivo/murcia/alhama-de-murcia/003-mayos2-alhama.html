@@ -125,6 +125,15 @@
         <span class="es">La experiencia de escucha mejora con auriculares y reproducción estéreo.</span>
         <span class="en">Best experienced with headphones and stereo playback.</span>
       </p>
+      <!-- Enlace al vídeo del canal, si este paisaje tiene versión extendida.
+           Nace oculto y solo lo destapa paisaje.js cuando el JSON trae
+           youtube_url: no todos los paisajes tendrán réplica en vídeo. -->
+      <p class="paisaje-video" id="paisaje-video" hidden>
+        <a id="paisaje-video-enlace" href="" target="_blank" rel="noopener">
+          <span class="es">Escucha extendida acompañada de vídeo 4K</span>
+          <span class="en">Extended listening with 4K video</span>
+        </a>
+      </p>
       <p class="paisaje-audio-error" id="paisaje-audio-error" hidden aria-live="polite">
         <span class="es">La grabación tarda en llegar desde Internet Archive. Espera unos segundos, recarga la página o vuelve en un minuto.</span>
         <span class="en">The recording is slow to load from Internet Archive. Wait a few seconds, reload the page or try again in a minute.</span>
@@ -329,6 +338,11 @@
         <span class="es">Contacto: </span>
         <span class="en">Contact: </span>
         <a href="mailto:contacto@paisajesonoro.org">contacto@PaisajeSonoro.org</a>
+      </div>
+      <div class="f-youtube">
+        <span class="es">Versiones extendidas en vídeo 4K en </span>
+        <span class="en">Extended versions in 4K video on </span>
+        <a href="https://www.youtube.com/@PaisajeSonoroOrg" target="_blank" rel="noopener">YouTube</a>
       </div>
     </div>
     <div class="f-info">

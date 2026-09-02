@@ -186,6 +186,18 @@
       }
     }
 
+    /* Enlace al vídeo del canal. El bloque nace oculto en la plantilla:
+       solo se destapa si este paisaje tiene versión extendida. Así, el
+       que no la tenga no enseña un hueco ni un enlace muerto. */
+    if (p.youtube_url) {
+      const videoEl = document.getElementById('paisaje-video');
+      const enlaceEl = document.getElementById('paisaje-video-enlace');
+      if (videoEl && enlaceEl) {
+        enlaceEl.href = p.youtube_url;
+        videoEl.hidden = false;
+      }
+    }
+
     // Imagen hero (carga prioritaria como <img>) + indicador de carga
     if (p.imagen_url) {
       const wrapEl = document.getElementById('paisaje-hero-wrap');
