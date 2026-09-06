@@ -613,14 +613,16 @@ footer {
 }
 
 /* Canal de YouTube: mismo aspecto que la línea de contacto, justo debajo. */
-.f-youtube {
+.f-youtube,
+.f-instagram {
   font-size: .88rem;
   color: var(--arena-claro);
   letter-spacing: .03em;
   line-height: 1.7;
 }
 
-.f-youtube a {
+.f-youtube a,
+.f-instagram a {
   color: var(--blanco);
   text-decoration: none;
   border-bottom: 1px solid var(--musgo-claro);
@@ -628,7 +630,8 @@ footer {
   transition: color .3s, border-color .3s;
 }
 
-.f-youtube a:hover {
+.f-youtube a:hover,
+.f-instagram a:hover {
   color: var(--arena);
   border-bottom-color: var(--arena);
 }
@@ -1456,6 +1459,14 @@ footer {
 .paisaje-video a:hover {
   color: var(--blanco);
   border-bottom-color: var(--arena);
+}
+
+/* Cuando se enseñan los dos enlaces (vídeo y reel), el segundo se pega más al
+   primero: son un bloque. El :not([hidden]) es imprescindible, porque si el
+   primero está oculto el segundo tiene que conservar su separación completa
+   respecto a la nota de los auriculares. */
+.paisaje-video:not([hidden]) + .paisaje-video:not([hidden]) {
+  margin-top: .35rem;
 }
 
 .paisaje-audio-error {

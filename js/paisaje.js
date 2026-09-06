@@ -186,17 +186,24 @@
       }
     }
 
-    /* Enlace al vídeo del canal. El bloque nace oculto en la plantilla:
-       solo se destapa si este paisaje tiene versión extendida. Así, el
-       que no la tenga no enseña un hueco ni un enlace muerto. */
-    if (p.youtube_url) {
-      const videoEl = document.getElementById('paisaje-video');
-      const enlaceEl = document.getElementById('paisaje-video-enlace');
-      if (videoEl && enlaceEl) {
-        enlaceEl.href = p.youtube_url;
-        videoEl.hidden = false;
-      }
+    /* Enlaces a los canales. Los bloques nacen ocultos en la plantilla y solo
+       se destapan si este paisaje trae la dirección: el que no la tenga no
+       enseña un hueco ni un enlace muerto. Son independientes entre sí.
+
+       La dirección se pone tal cual, sin validarla: así sigue funcionando si
+       YouTube o Instagram cambian su formato de enlaces. Si algún día se rompe,
+       se arregla entonces. */
+    function enlaceDeCanal(idBloque, idEnlace, url) {
+      if (!url) return;
+      const bloqueEl = document.getElementById(idBloque);
+      const enlaceEl = document.getElementById(idEnlace);
+      if (!bloqueEl || !enlaceEl) return;
+      enlaceEl.href = url;
+      bloqueEl.hidden = false;
     }
+
+    enlaceDeCanal('paisaje-video', 'paisaje-video-enlace', p.youtube_url);
+    enlaceDeCanal('paisaje-instagram', 'paisaje-instagram-enlace', p.instagram_url);
 
     // Imagen hero (carga prioritaria como <img>) + indicador de carga
     if (p.imagen_url) {
